@@ -8,7 +8,8 @@ from src.config import DATA, DATASETS, MODELS
 
 PROJECT = APP_ROOT.parent
 DATA_COPIES = [PROJECT / "AI Trim & Fuse/Dataset/trimfuse_synthetic_dataset/trimfuse_synth/data", PROJECT / "Colab Notebook"]
-MODEL_FILES = ["trim_models.joblib", "pmic_models.joblib", "sensor_models.joblib", "soc_models.joblib", "evaluation_06.json"]
+MODEL_FILES = ["trim_models.joblib", "pmic_models.joblib", "sensor_models.joblib", "soc_models.joblib", "vmin_models.joblib",
+               "evaluation_06.json"]
 
 
 def md5(p):

@@ -44,6 +44,7 @@ all the data. Every number, with its dataset, split, seed, model and definition,
 | Power chip | **44.7 → 11.5 tries (3.9×)** from one reference reading; **79%** need no search | 3.6–4.0×; 3.5–3.9× on versions never trained on |
 | Sensor | **3 oven passes → 1** for Medium / Loose grades (7.2 → 2.6 s); 96% of Medium chips in limits | 95–97% |
 | SoC | **+34.7% weekly revenue** from the same chips (optimiser vs synthetic demand); **85%** skip the speed test, 0 of 1,540 sold too fast | +33% to +58% per wafer |
+| SoC Vmin | Worst-core minimum voltage predicted from monitors with **4.2 mV** typical error (baseline 27 mV); a **25 mV** margin left 0 of 1,540 chips under-predicted | 3.8–4.5 mV |
 | Fuse words | **406 / 406** injected errors caught, **0** false alarms, every field checked | – |
 
 Time figures assume a fixed time per measurement or oven pass; the SoC gain depends on 3 rows of synthetic prices and
@@ -54,7 +55,7 @@ demand. Details and caveats are in the source-of-truth table.
 | Model | Used for | Why |
 |---|---|---|
 | Random Forest | MCU trim codes (bandgap, clock, LDO), PMIC reference | Handles the clock's non-linear pattern; beat XGBoost, LightGBM and a neural net |
-| Ridge regression | PMIC output rails, sensor temperature behaviour, SoC core speed | Near-linear physics: the simple model won and carried over to new chip versions |
+| Ridge regression | PMIC output rails, sensor temperature behaviour, SoC core speed, SoC Vmin | Near-linear physics: the simple model won and carried over to new chip versions |
 | Transfer learning (gradient boosting) | MCU-C packaging drift | Learned on MCU-A, fine-tuned with only 50 MCU-C chips |
 | Fixed rules | Fuse words, customer OTP settings, PMIC hidden defects | A fuse can't be undone: exact answers (rules 100% vs ML 96–98.5%) |
 | Integer optimiser (ILP) | SoC product plan | Matching chips to demand has one exact best answer |
@@ -89,8 +90,8 @@ Python 3.13; every package is pinned. Full clean-install steps, the checks and t
 
 | Folder / file | Contents |
 |---|---|
-| `Smart Trim Fuse/` | The website: `app/` (5 pages), `src/` (logic, rules, optimiser), `models/` (saved models), `data/` (9 CSVs), `tests/` (38 checks) |
-| `Colab Notebook/` | 7 notebooks, run in order 00 → 06, plus the 9 CSVs they read |
+| `Smart Trim Fuse/` | The website: `app/` (5 pages), `src/` (logic, rules, optimiser), `models/` (saved models), `data/` (9 CSVs), `tests/` (39 checks) |
+| `Colab Notebook/` | 8 notebooks, run in order 00 → 07, plus the 9 CSVs they read |
 | `Demo/` | 9 test CSVs for the Batch check page, with `expected_results.csv` |
 | `AI Trim & Fuse/Dataset/` | The synthetic dataset as provided, with its data dictionary and generator |
 | `Deliverables/` | Presentation (PPTX) and report (DOCX + PDF) |
@@ -109,6 +110,7 @@ Python 3.13; every package is pinned. Full clean-install steps, the checks and t
 | `04_SoC_Binning_Repair` | Core speed, product rules, demand optimiser, memory repair | `soc_models.joblib` |
 | `05_Advanced_Methods_Check` | GNN, GAN, RNN, RL and others: what didn't help, and why | – |
 | `06_Evaluation_and_Deployment` | Each wafer held out in turn, validated SoC margin, fallback and monitoring, model cards | `evaluation_06.json` |
+| `07_SoC_Vmin_Prediction` | Worst-core Vmin from monitors: baselines vs models, safety margin chosen on validation wafers, every wafer held out in turn | `vmin_models.joblib` |
 
 ## Checks
 
@@ -120,7 +122,7 @@ cd "Smart Trim Fuse"
 python -m unittest discover -s tests -v
 ```
 
-38 checks: fuse and OTP rules, file recognition and cleaning, the wafer-grouped split, every Demo file, every headline
+39 checks: fuse and OTP rules, file recognition and cleaning, the wafer-grouped split, every Demo file, every headline
 number recomputed from the saved models, identical data copies, and colour contrast in all four themes.
 
 ## Limits

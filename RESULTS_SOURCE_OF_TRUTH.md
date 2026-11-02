@@ -36,6 +36,7 @@ numbers (the Power BI dashboard and the interview material are kept locally, not
 | FUSE_CHECK | **406 / 406** injected fuse-map errors caught, 0 false alarms | Rule check | all 1,500 audit words | - |
 | OTP_CHECK | **400 / 400** customer requests judged as labelled | Rule check | all 400 requests | - |
 | REPAIR | Exact repair saves **17** more arrays than greedy (1,860 vs 1,843) | Optimiser | 3,000 bitmaps | - |
+| SOC_VMIN | SoC worst-core Vmin predicted with **4.2 mV** typical error (median baseline 27 mV); a **25 mV** margin left 0 of 1,540 chips under-predicted | Measured | 5 held-out wafers; margin chosen on validation wafers | 3.8–4.5 mV; 95% upper bound on under-prediction ≈ 0.19% |
 
 **Split used everywhere:** `GroupShuffleSplit` by `wafer_id`. 25% of the base version's wafers are held out, with
 `random_state = 42` (`src/common.py wafer_split`). No wafer is ever on both sides. The base versions are MCU-A,

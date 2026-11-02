@@ -17,7 +17,7 @@ import ui
 
 from src import mcu as M
 from src import pmic as P
-from src.common import to_code
+from src.common import to_code, wafer_split
 
 TABLE = APP_ROOT.parent / "RESULTS_SOURCE_OF_TRUTH.csv"
 
@@ -44,7 +44,15 @@ def recomputed():
         "SOC_SKIP": f"{100 - t80['hybrid_tested_%']:.1f}%",
         "FUSE_CHECK": f"{hits}/{total}" if false == 0 else f"{hits}/{total} with {false} false alarms",
         "REPAIR": f"+{h['repair_saved']}",
+        "SOC_VMIN": f"{_vmin_test_errors().abs().mean():.2f} mV",
     }
+
+
+def _vmin_test_errors():
+    """Measured minus predicted worst-core Vmin on the held-out SoC wafers (notebook 07)."""
+    vb = ui.model("vmin")
+    _, te = wafer_split(ui.raw("soc"))
+    return te[[f"core{i}_vmin_2GHz_mV" for i in range(8)]].max(axis=1) - vb["model"].predict(te[vb["features"]])
 
 
 def _mcu_no_search():
@@ -61,6 +69,13 @@ class Headlines(unittest.TestCase):
         for k, v in got.items():
             with self.subTest(k):
                 self.assertEqual(table[k], v)
+
+    def test_vmin_margin_covers_every_held_out_chip(self):
+        vb = ui.model("vmin")
+        err = _vmin_test_errors()
+        self.assertEqual(int((err > vb["margin_mV"]).sum()), vb["metrics"]["test_under_at_margin"])
+        self.assertEqual(vb["metrics"]["test_under_at_margin"], 0)
+        self.assertEqual(sorted(wafer_split(ui.raw("soc"))[1].wafer_id.unique()), vb["test_wafers"])
 
     def test_soc_margin_has_no_over_graded_chips(self):
         ev = ui.evaluation()

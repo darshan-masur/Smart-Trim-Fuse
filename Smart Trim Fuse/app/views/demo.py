@@ -220,6 +220,17 @@ else:
         st.html(f'<div class="card"><div class="ttl">If the chip is {margin} MHz slower</div>{ui.badge(sure[te.index.get_loc(i)])}</div>')
     with c2:
         st.html(f'<div class="card"><div class="ttl">If the chip is {margin} MHz faster</div>{ui.badge(opt_sku)}</div>')
+    vb = ui.model("vmin")  # notebook 07: worst-core Vmin from the same monitors
+    v_pred = float(vb["model"].predict(one[vb["features"]])[0])
+    v_meas = float(one[[f"core{c}_vmin_2GHz_mV" for c in range(8)]].max(axis=1).iloc[0])
+    v1, v2, v3 = st.columns(3)
+    v1.metric("Predicted worst-core Vmin at 2 GHz", f"{v_pred:.0f} mV")
+    v2.metric(f"With the {vb['margin_mV']} mV safety margin", f"{v_pred + vb['margin_mV']:.0f} mV")
+    v3.metric("Measured (shown only to compare)", f"{v_meas:.0f} mV", f"{v_meas - v_pred:+.1f} mV vs prediction",
+              delta_color="off")
+    st.caption("Vmin is predicted from the monitors, with no voltage search. The margin was chosen on validation wafers "
+               "so that no chip gets less voltage than it needs; in this dataset the voltage bin itself is set from "
+               "speed. Synthetic data.")
 
     ui.step(3, "The decision, and the fallback", "Same product both ways: sell on the prediction. Different: speed test")
     k = te.index.get_loc(i)

@@ -21,6 +21,8 @@ p1, pnew = lp[lp["product"] == "PMIC-P1"], lp[lp["product"] != "PMIC-P1"]
 s2 = ls[ls["product"] == "ACC-2G"]
 HYB = ev["soc_hybrid_MHz"]
 hyb = pd.DataFrame(ev["soc_curve_test"]).set_index("margin_MHz").loc[HYB]
+vb = ui.model("vmin")  # notebook 07
+vm = vb["metrics"]
 
 st.title("Results and why")
 ui.plain("One card per result: <b>before → after</b>, how it works, why that method was chosen, and how much it varies "
@@ -71,10 +73,18 @@ cards = [
      "the product mix has an exact best answer, so an optimiser. The margin was chosen on validation wafers, then "
      "checked on untouched ones.",
      f"Plan on each of {len(lq)} wafers: {span(lq['uplift_%'], lambda v: f'+{v:.0f}%')} revenue"),
+    ("SoC minimum voltage (Vmin)", "soc_binning_harvesting", f"{vm['baseline_mae_mV']:.0f} → {vm['mae_mV']:.1f} mV error",
+     f"a Ridge model predicts each chip's worst-core Vmin at 2 GHz from the same monitors as the speed model, before "
+     f"any voltage search. A {vb['margin_mV']} mV margin chosen on validation wafers covered every untouched chip "
+     f"({vm['test_under_at_margin']} of {vm['test_chips']:,} under-predicted; 95% upper bound "
+     f"{vm['upper95_pct']:.2f}%).",
+     "Vmin moves almost linearly with the process monitors, so a straight-line model beat Random Forest and gradient "
+     "boosting. The error before the arrow is one fleet-wide value for every chip.",
+     f"Each of 20 wafers held out in turn: {vm['lowo_mae_min_mV']:.1f} to {vm['lowo_mae_max_mV']:.1f} mV"),
 ]
-for row in range(0, 6, 2):
+for row in range(0, len(cards), 2):
     a, b = st.columns(2)
-    for col, c in zip((a, b), cards[row:row + 2], strict=True):
+    for col, c in zip((a, b), cards[row:row + 2]):
         with col:
             result(*c)
 

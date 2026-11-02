@@ -51,6 +51,10 @@ product and one or two small new versions. It ships with a data dictionary and i
    chosen on validation wafers (80 MHz, zero escapes) and confirmed on untouched wafers; speed test kept only for chips
    near a product boundary (85% skip); fallback rates; a monitoring alarm tested with a simulated tester fault;
    out-of-range detection; model cards.
+8. **07 SoC Vmin:** worst-core minimum voltage at 2 GHz predicted from the same monitors as the speed model (Ridge,
+   4.2 mV typical error vs 27 mV for one fleet-wide value); a 25 mV safety margin chosen on validation wafers left 0 of
+   1,540 untouched chips under-predicted; each wafer held out in turn gives 3.8–4.5 mV. In this dataset the AVS bin is
+   set from speed, so the model adds a voltage estimate without changing the bin logic.
 
 ## 4. Validation and controls
 
@@ -65,7 +69,7 @@ product and one or two small new versions. It ships with a data dictionary and i
   reserved bits, trim fields and the TS_CAL1 reading. Otherwise the word is **REVIEW** or **BLOCK**.
 - **Single source of truth.** Every headline number is defined with its dataset, split, seed, model and assumptions,
   and is recomputed from the saved models by an automated test.
-- **Automated checks.** 38 tests: fuse and OTP rules, file recognition and cleaning, the wafer split, every Demo file,
+- **Automated checks.** 39 tests: fuse and OTP rules, file recognition and cleaning, the wafer split, every Demo file,
   the headline numbers, identical data copies and colour contrast.
 - **Reproducibility.** Python 3.13.1 with 48 pinned packages; a clean install has been tested.
 
