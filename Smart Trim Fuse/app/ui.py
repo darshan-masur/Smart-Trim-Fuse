@@ -21,6 +21,7 @@ import theme  # noqa: E402
 
 from src import mcu as M  # noqa: E402
 from src import pmic as P  # noqa: E402
+from src import screen as X  # noqa: E402
 from src import sensor as S  # noqa: E402
 from src import soc as Q  # noqa: E402
 from src.common import code_metrics, wafer_split  # noqa: E402
@@ -976,6 +977,12 @@ def soc_true_elig():
 def soc_test():
     _, te = wafer_split(soc_data())
     return te, Q.predicted_ftop(te, model("soc"))
+
+
+@st.cache_resource
+def defect_screen():
+    """Expected-healthy bandgap and resonance models for the Batch check's defect screen (src/screen.py)."""
+    return X.fit(raw("mcu"), raw("sensor"))
 
 
 @st.cache_data

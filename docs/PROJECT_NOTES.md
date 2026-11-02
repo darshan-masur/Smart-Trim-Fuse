@@ -76,7 +76,7 @@ product and one or two small new versions. It ships with a data dictionary and i
   reserved bits, trim fields and the TS_CAL1 reading. Otherwise the word is **REVIEW** or **BLOCK**.
 - **Single source of truth.** Every headline number is defined with its dataset, split, seed, model and assumptions,
   and is recomputed from the saved models by an automated test.
-- **Automated checks.** 40 tests: fuse and OTP rules, file recognition and cleaning, the wafer split, every Demo file,
+- **Automated checks.** 43 tests: fuse and OTP rules, file recognition and cleaning, the wafer split, every Demo file,
   the headline numbers, identical data copies and colour contrast.
 - **Reproducibility.** Python 3.13.1 with 48 pinned packages; a clean install has been tested.
 
@@ -90,7 +90,10 @@ A Streamlit app that loads the saved models (nothing is retrained in the app):
   shown, followed by the 64-bit fuse-word check.
 - **Results:** wafer-by-wafer ranges, baselines, model cards and the methods that did not help.
 - **Batch check:** upload a CSV; it is recognised by its columns, cleaned, and checked row by row. Rows with missing or
-  impossible data are not predicted and are marked for conventional review.
+  impossible data are not predicted and are marked for conventional review. A defect screen runs first: a die whose
+  bandgap (MCU) or MEMS resonance (sensor) is far from what its process predicts for a healthy die, or that fails the
+  PMIC datasheet limits, gets no AI result and goes to the conventional flow and failure analysis. On unseen wafers it
+  catches every defect in the dataset (MCU 14, sensor 15, PMIC 16) with no false alarm; Demo files 10-13 show it.
 
 Status is always shown with a symbol as well as a colour (✓ good, • attention, × fallback, – neutral), and every page
 carries the synthetic-data notice.

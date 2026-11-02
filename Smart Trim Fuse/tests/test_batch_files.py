@@ -5,7 +5,9 @@ import unittest
 import numpy as np
 import pandas as pd
 
-from common import DEMO, B, raw, run_file
+from common import DEMO, B, X, raw, run_file, screen
+
+from src.common import wafer_split
 
 EXPECTED = pd.read_csv(DEMO / "expected_results.csv").set_index("File")
 
@@ -66,6 +68,38 @@ class DemoFiles(unittest.TestCase):
                                  [e["Rows in file"], e["Removed"], e["Predicted"], e["Not predicted"]])
                 self.assertEqual(B.rows_kept_note(log) or "nothing to clean", e["Cleaning the page reports"])
                 self.assertEqual("; ".join(f"{a} = {b}" for a, b in summ), e["Result summary"])
+
+
+class DefectScreens(unittest.TestCase):
+    def test_defect_demo_files_flag_exactly_the_defective_dies(self):
+        for f in ["10_mcu_defective_dies_20.csv", "11_pmic_hidden_defects_20.csv", "12_sensor_defective_mems_20.csv"]:
+            with self.subTest(f):
+                df = pd.read_csv(DEMO / f)
+                out = run_file(df)[5]
+                flagged = (out.defect != "").values
+                self.assertEqual(flagged.tolist(), df.latent_defect.astype(bool).tolist())
+                self.assertTrue((out.action[flagged] == B.DEFECT).all())
+                ai = [c for c in out.columns if c.endswith("_AI")]
+                self.assertTrue(out.loc[flagged, ai].isna().all().all(), "a defective die must get no AI result")
+
+    def test_screens_catch_every_defect_on_unseen_wafers_with_no_false_alarms(self):
+        scr = screen()
+        for name, base, fn in [("mcu", "MCU-A", lambda d: X.mcu(d, scr)), ("pmic", "PMIC-P1", X.pmic),
+                               ("sensor", "ACC-2G", lambda d: X.sensor(d, scr))]:
+            with self.subTest(name):
+                d = raw(name)
+                tr, _ = wafer_split(d[d.derivative == base])
+                d = d[~d.wafer_id.isin(set(tr.wafer_id))]
+                flagged = fn(d) != ""
+                self.assertEqual(int((flagged & d.latent_defect.values).sum()), int(d.latent_defect.sum()))
+                self.assertEqual(int((flagged & ~d.latent_defect.values).sum()), 0)
+
+    def test_soc_defects_go_to_scrap_or_fewer_cores(self):
+        df = pd.read_csv(DEMO / "13_soc_defective_chips_20.csv")
+        out = run_file(df)[5]
+        self.assertTrue((out.product_AI[~df.l2_repairable.values] == "scrap").all())
+        bad = (out.defect != "").values
+        self.assertEqual(out.product_AI[bad].tolist(), df.sku_rule_based[bad].tolist())
 
 
 if __name__ == "__main__":

@@ -13,6 +13,7 @@ sys.path.insert(0, str(APP_ROOT))
 warnings.filterwarnings("ignore")
 
 from src import batch as B
+from src import screen as X
 from src.config import DATA, DATASETS, MODELS
 
 DEMO = APP_ROOT.parent / "Demo"
@@ -28,6 +29,11 @@ def model(name):
     return joblib.load(MODELS / f"{name}_models.joblib")
 
 
+@lru_cache
+def screen():
+    return X.fit(raw("mcu"), raw("sensor"))
+
+
 def run_file(df):
     """Exactly what the Batch check page does: (kind, missing, score, cleaned, log, results, summary)."""
     kind, missing, score = B.detect(df)
@@ -35,11 +41,11 @@ def run_file(df):
         return kind, missing, score, None, None, None, None
     d, log = B.clean(df, kind)
     if kind.startswith("MCU dies"):
-        out, summ = B.run_mcu(d, model("trim"))
+        out, summ = B.run_mcu(d, model("trim"), screen())
     elif kind.startswith("PMIC"):
         out, summ = B.run_pmic(d, model("pmic"))
     elif kind.startswith("Sensor"):
-        out, summ = B.run_sensor(d, model("sensor"))
+        out, summ = B.run_sensor(d, model("sensor"), screen())
     elif kind.startswith("SoC"):
         out, summ = B.run_soc(d, model("soc"), raw("sku"))
     elif kind.startswith("Customer"):

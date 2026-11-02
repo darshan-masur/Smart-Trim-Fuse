@@ -92,9 +92,9 @@ Python 3.13; every package is pinned. Full clean-install steps, the checks and t
 
 | Folder / file | Contents |
 |---|---|
-| `Smart Trim Fuse/` | The website: `app/` (5 pages), `src/` (logic, rules, optimiser), `models/` (saved models), `data/` (9 CSVs), `tests/` (40 checks) |
+| `Smart Trim Fuse/` | The website: `app/` (5 pages), `src/` (logic, rules, optimiser), `models/` (saved models), `data/` (9 CSVs), `tests/` (43 checks) |
 | `Colab Notebook/` | 9 notebooks, run in order 00 → 08, plus the 9 CSVs they read |
-| `Demo/` | 9 test CSVs for the Batch check page, with `expected_results.csv` |
+| `Demo/` | 13 test CSVs for the Batch check page (files 10-13 mix healthy and really defective dies), with `expected_results.csv` |
 | `AI Trim & Fuse/Dataset/` | The synthetic dataset as provided, with its data dictionary and generator |
 | `Deliverables/` | Presentation (PPTX) and report (DOCX + PDF) |
 | `docs/` | Screenshots and [PROJECT_NOTES.md](docs/PROJECT_NOTES.md): technical notes on the approach, validation and controls |
@@ -125,7 +125,7 @@ cd "Smart Trim Fuse"
 python -m unittest discover -s tests -v
 ```
 
-40 checks: fuse and OTP rules, file recognition and cleaning, the wafer-grouped split, every Demo file, every headline
+43 checks: fuse and OTP rules, file recognition and cleaning, the wafer-grouped split, every Demo file, every headline
 number recomputed from the saved models, identical data copies, and colour contrast in all four themes.
 
 ## Limits

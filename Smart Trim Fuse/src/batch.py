@@ -17,6 +17,7 @@ import pandas as pd
 
 from src import mcu as M
 from src import pmic as P
+from src import screen as X
 from src import sensor as S
 from src import soc as Q
 from src.common import to_code
@@ -37,6 +38,7 @@ REQUIRED = {
 }
 MAY_BE_BLANK = {"other_addresses_on_bus"}  # an empty bus is a valid answer
 NOT_PREDICTED = "not predicted; conventional review required (missing or impossible data)"
+DEFECT = "defect suspected: no AI result used; conventional flow + failure analysis"
 DIE_ID_RE = re.compile(r"MCU-\d{6}")
 ID_COL = {"Customer OTP requests": "request_id", "MCU fuse words": "die_id"}
 POSITIVE = ["bg_untrim_V", "hsi_untrim_MHz", "ldo_untrim_V", "bg_trimmed_sort_V", "vref_untrim_V", "vref_trimmed_sort_V",
@@ -118,24 +120,39 @@ def _code_summary(name, truth, pred_code, bits):
     return [(f"{name}: exact", f"{(err == 0).mean():.1%}"), (f"{name}: within ±1 code", f"{(err <= 1).mean():.1%}")]
 
 
-def run_mcu(d, bundle):
-    ok = d[d._usable]
+def _screened(d, fn):
+    """Defect reason per row ('' = healthy or not screened), only for rows with complete data."""
+    why = pd.Series("", index=d.index, dtype=object)
+    if d._usable.any():
+        why[d._usable] = fn(d[d._usable])
+    return why
+
+
+def _action(d, why, ok_text):
+    return np.select([~d._usable.values, (why != "").values], [NOT_PREDICTED, DEFECT], ok_text)
+
+
+def run_mcu(d, bundle, scr):
+    why = _screened(d, lambda x: X.mcu(x, scr))
+    ok = d[d._usable & (why == "")]
     out = d[[c for c in ("die_id", "wafer_id", "derivative") if c in d.columns]].copy()
-    summary = []
+    summary = X.summary(why != "", d)
     if len(ok):
         pr = M.predict_codes(ok, bundle)
         for t, c in M.TRIMS.items():
             out.loc[ok.index, f"{t}_code_AI"] = to_code(pr[t], c["bits"])
             if c["label"] in d.columns:
                 summary += _code_summary(c["name"], ok[c["label"]].values, to_code(pr[t], c["bits"]), c["bits"])
-    out["action"] = np.where(d._usable, "AI codes proposed; verify once on the tester", NOT_PREDICTED)
+    out["defect"] = why
+    out["action"] = _action(d, why, "AI codes proposed; verify once on the tester")
     return out, summary
 
 
 def run_pmic(d, bundle):
-    ok = d[d._usable]
+    why = _screened(d, X.pmic)
+    ok = d[d._usable & (why == "")]
     out = d[[c for c in ("die_id", "wafer_id", "derivative") if c in d.columns]].copy()
-    summary = []
+    summary = X.summary(why != "", d)
     if len(ok):
         pr = P.predict_rails(ok, bundle)
         f = P.add_features(ok)
@@ -145,16 +162,16 @@ def run_pmic(d, bundle):
                 summary += _code_summary(r, ok[f"{r}_trim_code_opt"].values, to_code(pr[r], 6), 6)
         for c, short in zip(P.CS_TARGETS, ["cs_gain_err_pct", "cs_offset_mA", "cs_inl_pct"], strict=True):
             out.loc[ok.index, f"{short}_AI"] = bundle["current_sense"][c].predict(f[bundle["cs_features"]]).round(3)
-    if {"efficiency_1A_pct", "load_reg_mV"} <= set(d.columns):
-        out["defect_flag"] = (d.efficiency_1A_pct < 88) | (d.load_reg_mV > 10)
-    out["action"] = np.where(d._usable, "AI rail codes proposed; verify once on the tester", NOT_PREDICTED)
+    out["defect"] = why
+    out["action"] = _action(d, why, "AI rail codes proposed; verify once on the tester")
     return out, summary
 
 
-def run_sensor(d, bundle):
-    ok = d[d._usable].copy()
+def run_sensor(d, bundle, scr):
+    why = _screened(d, lambda x: X.sensor(x, scr))
+    ok = d[d._usable & (why == "")].copy()
     out = d[[c for c in ("die_id", "wafer_id", "derivative") if c in d.columns]].copy()
-    summary = []
+    summary = X.summary(why != "", d)
     if len(ok):
         for c in ["lot_id", "wafer_id", "derivative", "full_scale_g", "latent_defect", "characterized_3temp",
                   "conv_test_time_s"]:
@@ -176,9 +193,8 @@ def run_sensor(d, bundle):
             if f"tco_{a}_true_mg_per_C" in d.columns and d[f"tco_{a}_true_mg_per_C"].notna().any():
                 t = d.loc[rows, f"tco_{a}_true_mg_per_C"].values
                 summary.append((f"TCO {a}: mean error (mg/°C)", f"{np.nanmean(np.abs(t - p['tco'][m.values])):.3f}"))
-        dev = d.mems_resonance_kHz / d.mems_resonance_kHz.median() - 1
-        out["defect_flag"] = dev < -0.06
-    out["action"] = np.where(d._usable, "AI calibration codes proposed (1 insertion)", NOT_PREDICTED)
+    out["defect"] = why
+    out["action"] = _action(d, why, "AI calibration codes proposed (1 insertion)")
     return out, summary
 
 
@@ -206,8 +222,15 @@ def run_soc(d, bundle, skus):
             hi = (out.loc[ok.index, "product_AI"].map(rank) > d.loc[ok.index, "sku_rule_based"].map(rank)).mean()
             summary += [("Same product as the full speed test", f"{same:.1%}"),
                         ("Product higher than the speed test (over-graded)", f"{hi:.1%}")]
-    out["action"] = np.where(d._usable, f"product proposed from prediction ({bundle['guard_band_MHz']} MHz guard band)",
-                             NOT_PREDICTED)
+    bad = d[[f"core{i}_defect" for i in range(8)]].sum(axis=1)
+    out["defect"] = np.where(~d.l2_repairable, "L2 cache not repairable",
+                             np.where(bad > 0, bad.astype(str) + " of 8 cores defective (structural test)", ""))
+    summary = [("Dies with a structural defect", f"{(out.defect != '').sum()} of {len(out)}"),
+               ("Sold with fewer cores (harvested)", f"{((bad > 0) & d.l2_repairable & (out.get('product_AI') != 'scrap')).sum()}"),
+               ("Scrapped", f"{(out.get('product_AI') == 'scrap').sum()}")] + summary
+    out["action"] = np.select([~d._usable.values, (out.get("product_AI") == "scrap").values],
+                              [NOT_PREDICTED, "scrap: no product this die can meet"],
+                              f"product proposed from prediction ({bundle['guard_band_MHz']} MHz guard band)")
     return out, summary
 
 

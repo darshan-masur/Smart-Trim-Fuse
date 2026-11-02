@@ -73,11 +73,11 @@ with k4:
 # --- step 3: run -------------------------------------------------------------------------------------
 ui.step(3, "Results", "Same models and rules as the chip pages")
 if kind.startswith("MCU dies"):
-    out, summ = B.run_mcu(d, ui.model("trim"))
+    out, summ = B.run_mcu(d, ui.model("trim"), ui.defect_screen())
 elif kind.startswith("PMIC"):
     out, summ = B.run_pmic(d, ui.model("pmic"))
 elif kind.startswith("Sensor"):
-    out, summ = B.run_sensor(d, ui.model("sensor"))
+    out, summ = B.run_sensor(d, ui.model("sensor"), ui.defect_screen())
 elif kind.startswith("SoC"):
     out, summ = B.run_soc(d, ui.model("soc"), ui.raw("sku"))
 elif kind.startswith("Customer"):
@@ -89,6 +89,15 @@ if summ:
     st.dataframe(pd.DataFrame(summ, columns=["Check", "Result"]), hide_index=True, width="stretch")
 else:
     st.caption("The file has no answer columns, so there is nothing to score against: these are pure predictions.")
+if "defect" in out.columns and (out.defect != "").any():
+    bad = out[out.defect != ""]
+    st.warning(f"**{len(bad)} defective {'die' if len(bad) == 1 else 'dies'} caught** before any AI result was used: "
+               + ("each one is scrapped or sold with fewer cores, decided by the structural test."
+                  if kind.startswith("SoC") else "each one goes to the conventional flow and failure analysis."),
+               icon=":material/report:")
+    st.dataframe(bad[[c for c in ("die_id", "derivative", "product_AI", "defect", "action") if c in bad.columns]],
+                 hide_index=True, width="stretch")
+    st.markdown("**Every row**")
 st.dataframe(out, hide_index=True, width="stretch", height=min(460, 38 + 35 * len(out)))
 st.download_button("Download results (CSV)", out.to_csv(index=False), f"results_{name}", icon=":material/download:",
                    type="primary")

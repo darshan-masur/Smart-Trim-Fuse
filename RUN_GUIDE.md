@@ -43,13 +43,13 @@ loaded with no errors.
 .venv/Scripts/python -m unittest discover -s tests -v
 ```
 
-40 checks in 7 files:
+43 checks in 7 files:
 
 | File | What it checks |
 |---|---|
 | `tests/test_fuse_rules.py` | The schema covers all 64 bits exactly once. Malformed words (too short or long, not hex, no `0x`) are blocked, never truncated. **PASS only** with a unique die_id found in the sort records and checked trim and TS_CAL1 fields (8 rules, every field covered); otherwise REVIEW or BLOCK. A wrong TS_CAL1 is blocked. 406 / 406 audit errors are caught with 0 false alarms. |
 | `tests/test_otp_rules.py` | Each OTP rule; the first broken rule wins; an unreadable address is never "valid"; the dataset and Demo labels match. |
-| `tests/test_batch_files.py` | File recognition (including an MCU file missing one column). Missing, text and impossible values are never predicted. The messy file's counts add up. **Every Demo file matches `Demo/expected_results.csv`.** |
+| `tests/test_batch_files.py` | File recognition (including an MCU file missing one column). Missing, text and impossible values are never predicted. The messy file's counts add up. **Every Demo file matches `Demo/expected_results.csv`.** The defect screens flag exactly the defective dies in Demo files 10-13, and on unseen wafers catch every defect with no false alarm. |
 | `tests/test_wafer_split.py` | No wafer in both training and test; about 25% of wafers held out; reproducible with seed 42; Demo files never use training wafers. |
 | `tests/test_headline_numbers.py` | Every value in `RESULTS_SOURCE_OF_TRUTH.csv` is recomputed from the saved models and `evaluation_06.json`. |
 | `tests/test_project_files.py` | The data and model copies listed in `PROJECT_MAP.md` stay identical to the canonical files. |
