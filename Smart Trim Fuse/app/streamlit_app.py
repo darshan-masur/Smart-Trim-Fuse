@@ -17,9 +17,12 @@ import streamlit as st  # noqa: E402
 import theme  # noqa: E402
 import ui  # noqa: E402
 
-# A running server keeps imported helper modules in memory. Reload them each run so edits are picked up.
-importlib.reload(theme)
-importlib.reload(ui)
+from src import batch, common, config, mcu, pmic, results, sensor, soc  # noqa: E402
+
+# A running server keeps imported helper modules in memory (src/ too, as Streamlit only re-runs app/). Reload them
+# each run, dependencies first, so edits and redeploys are picked up.
+for m in (config, common, mcu, pmic, sensor, soc, batch, results, theme, ui):
+    importlib.reload(m)
 
 st.set_page_config(page_title="Smart Trim & Fuse", page_icon=":material/tune:", layout="wide")
 ui.setup()
