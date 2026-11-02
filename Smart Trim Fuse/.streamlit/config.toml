@@ -1,0 +1,20 @@
+# Base theme = the default "Beige" theme from app/theme.py, so the very first paint already matches
+# (no JavaScript involved). The in-app switcher changes everything else through CSS custom properties.
+[theme]
+base = "light"
+primaryColor = "#5c4a32"
+backgroundColor = "#f6f1e9"
+secondaryBackgroundColor = "#e9e1d3"
+textColor = "#2b2419"
+font = "'DM Sans':https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,400;9..40,500;9..40,600;9..40,700&display=swap"
+headingFont = "'Bricolage Grotesque':https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,600;12..96,700;12..96,800&display=swap"
+baseRadius = "12px"
+showWidgetBorder = true
+
+[browser]
+gatherUsageStats = false
+
+# Presentation mode: no "Deploy" button or developer menu in the top bar (the app CSS also hides Deploy,
+# in case the app is started with other flags).
+[client]
+toolbarMode = "minimal"

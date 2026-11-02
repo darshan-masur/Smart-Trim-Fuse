@@ -1,0 +1,53 @@
+# Copy of "Smart Trim Fuse/requirements.txt" at the repo root, where Streamlit Community Cloud looks for it.
+# tests/test_project_files.py keeps the two files identical below this header.
+# Smart Trim & Fuse app: the complete environment the app and tests were checked with on 1 Nov 2026.
+# Python 3.13.1 (64-bit, Windows 11). Clean install: see RUN_GUIDE.md. Every package is pinned, dependencies included.
+# scikit-learn must stay 1.9.0: the saved models in models/ were made with it.
+altair==6.2.1
+anyio==4.12.1
+attrs==24.3.0
+blinker==1.9.0
+cachetools==7.1.4
+certifi==2024.12.14
+charset-normalizer==3.4.1
+click==8.1.8
+colorama==0.4.6
+gitdb==4.0.12
+gitpython==3.1.50
+h11==0.16.0
+httptools==0.8.0
+idna==3.19
+itsdangerous==2.2.0
+jinja2==3.1.5
+joblib==1.5.3
+jsonschema==4.23.0
+jsonschema-specifications==2024.10.1
+markupsafe==3.0.2
+narwhals==2.22.1
+numpy==2.4.6
+packaging==24.2
+pandas==3.0.3
+pillow==12.2.0
+protobuf==7.35.1
+pyarrow==24.0.0
+pydeck==0.9.2
+python-dateutil==2.9.0.post0
+python-multipart==0.0.32
+referencing==0.35.1
+requests==2.32.3
+rpds-py==0.22.3
+scikit-learn==1.9.0
+scipy==1.17.1
+six==1.17.0
+smmap==5.0.3
+starlette==0.52.1
+streamlit==1.58.0
+tenacity==9.1.4
+threadpoolctl==3.6.0
+toml==0.10.2
+typing-extensions==4.15.0
+tzdata==2026.2
+urllib3==2.3.0
+uvicorn==0.41.0
+watchdog==6.0.0
+websockets==16.0

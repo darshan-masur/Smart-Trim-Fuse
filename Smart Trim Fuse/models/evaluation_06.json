@@ -1,0 +1,1968 @@
+{
+ "note": "synthetic data",
+ "lowo_mcu": [
+  {
+   "wafer": "MA1-W01",
+   "in_reported_test": true,
+   "chips": 421,
+   "no_search_%": 78.622327791,
+   "formula_no_search_%": 57.9572446556,
+   "tries_today": 19.8052256532,
+   "tries_ai": 5.0902612827,
+   "ms_today": 28.7472684086,
+   "ms_ai": 8.0902612827,
+   "bg_within1_%": 99.7624703088,
+   "hsi_within1_%": 78.8598574822,
+   "ldo_within1_%": 100.0,
+   "speedup_x": 3.5533176747
+  },
+  {
+   "wafer": "MA1-W02",
+   "in_reported_test": false,
+   "chips": 421,
+   "no_search_%": 80.2850356295,
+   "formula_no_search_%": 65.5581947743,
+   "tries_today": 19.6104513064,
+   "tries_ai": 4.9334916865,
+   "ms_today": 28.4199524941,
+   "ms_ai": 7.7923990499,
+   "bg_within1_%": 99.2874109264,
+   "hsi_within1_%": 80.9976247031,
+   "ldo_within1_%": 100.0,
+   "speedup_x": 3.6471377187
+  },
+  {
+   "wafer": "MA1-W03",
+   "in_reported_test": false,
+   "chips": 421,
+   "no_search_%": 74.8218527316,
+   "formula_no_search_%": 47.7434679335,
+   "tries_today": 19.7458432304,
+   "tries_ai": 5.4916864608,
+   "ms_today": 28.6194774347,
+   "ms_ai": 8.8821852732,
+   "bg_within1_%": 100.0,
+   "hsi_within1_%": 74.8218527316,
+   "ldo_within1_%": 100.0,
+   "speedup_x": 3.2221211959
+  },
+  {
+   "wafer": "MA1-W04",
+   "in_reported_test": false,
+   "chips": 421,
+   "no_search_%": 66.9833729216,
+   "formula_no_search_%": 43.9429928741,
+   "tries_today": 19.7339667458,
+   "tries_ai": 6.3657957245,
+   "ms_today": 28.5923990499,
+   "ms_ai": 9.8289786223,
+   "bg_within1_%": 92.3990498812,
+   "hsi_within1_%": 74.5843230404,
+   "ldo_within1_%": 95.2494061758,
+   "speedup_x": 2.9089898502
+  },
+  {
+   "wafer": "MA1-W05",
+   "in_reported_test": false,
+   "chips": 421,
+   "no_search_%": 83.3729216152,
+   "formula_no_search_%": 69.8337292162,
+   "tries_today": 19.8669833729,
+   "tries_ai": 4.7719714964,
+   "ms_today": 28.8631828979,
+   "ms_ai": 7.4465558195,
+   "bg_within1_%": 99.5249406176,
+   "hsi_within1_%": 83.8479809976,
+   "ldo_within1_%": 100.0,
+   "speedup_x": 3.8760446571
+  },
+  {
+   "wafer": "MA2-W01",
+   "in_reported_test": false,
+   "chips": 421,
+   "no_search_%": 85.7482185273,
+   "formula_no_search_%": 77.4346793349,
+   "tries_today": 19.7197149644,
+   "tries_ai": 4.5486935867,
+   "ms_today": 28.5781472684,
+   "ms_ai": 7.0237529691,
+   "bg_within1_%": 100.0,
+   "hsi_within1_%": 85.7482185273,
+   "ldo_within1_%": 100.0,
+   "speedup_x": 4.0687859317
+  },
+  {
+   "wafer": "MA2-W02",
+   "in_reported_test": false,
+   "chips": 421,
+   "no_search_%": 88.5985748219,
+   "formula_no_search_%": 73.8717339667,
+   "tries_today": 19.8717339667,
+   "tries_ai": 4.3657957245,
+   "ms_today": 28.8508313539,
+   "ms_ai": 6.6437054632,
+   "bg_within1_%": 99.7624703088,
+   "hsi_within1_%": 88.8361045131,
+   "ldo_within1_%": 100.0,
+   "speedup_x": 4.3425813371
+  },
+  {
+   "wafer": "MA2-W03",
+   "in_reported_test": false,
+   "chips": 421,
+   "no_search_%": 85.2731591449,
+   "formula_no_search_%": 69.3586698337,
+   "tries_today": 19.7814726841,
+   "tries_ai": 4.6342042755,
+   "ms_today": 28.6650831354,
+   "ms_ai": 7.1491686461,
+   "bg_within1_%": 99.7624703088,
+   "hsi_within1_%": 85.5106888361,
+   "ldo_within1_%": 100.0,
+   "speedup_x": 4.0095687421
+  },
+  {
+   "wafer": "MA2-W04",
+   "in_reported_test": false,
+   "chips": 421,
+   "no_search_%": 84.7980997625,
+   "formula_no_search_%": 76.2470308789,
+   "tries_today": 19.7672209026,
+   "tries_ai": 4.593824228,
+   "ms_today": 28.7182897862,
+   "ms_ai": 7.1144893112,
+   "bg_within1_%": 99.5249406176,
+   "hsi_within1_%": 85.2731591449,
+   "ldo_within1_%": 100.0,
+   "speedup_x": 4.0365918803
+  },
+  {
+   "wafer": "MA2-W05",
+   "in_reported_test": true,
+   "chips": 421,
+   "no_search_%": 90.7363420428,
+   "formula_no_search_%": 73.8717339667,
+   "tries_today": 19.890736342,
+   "tries_ai": 4.1591448931,
+   "ms_today": 28.8764845606,
+   "ms_ai": 6.209976247,
+   "bg_within1_%": 99.5249406176,
+   "hsi_within1_%": 90.973871734,
+   "ldo_within1_%": 100.0,
+   "speedup_x": 4.6500152999
+  },
+  {
+   "wafer": "MA3-W01",
+   "in_reported_test": false,
+   "chips": 421,
+   "no_search_%": 77.9097387173,
+   "formula_no_search_%": 71.2589073634,
+   "tries_today": 19.7695961995,
+   "tries_ai": 5.0451306413,
+   "ms_today": 28.6731591449,
+   "ms_ai": 8.0403800475,
+   "bg_within1_%": 100.0,
+   "hsi_within1_%": 77.9097387173,
+   "ldo_within1_%": 100.0,
+   "speedup_x": 3.5661447563
+  },
+  {
+   "wafer": "MA3-W02",
+   "in_reported_test": true,
+   "chips": 421,
+   "no_search_%": 73.8717339667,
+   "formula_no_search_%": 67.458432304,
+   "tries_today": 19.7790973872,
+   "tries_ai": 5.3871733967,
+   "ms_today": 28.6712589074,
+   "ms_ai": 8.7073634204,
+   "bg_within1_%": 99.7624703088,
+   "hsi_within1_%": 74.109263658,
+   "ldo_within1_%": 100.0,
+   "speedup_x": 3.2927601069
+  },
+  {
+   "wafer": "MA3-W03",
+   "in_reported_test": false,
+   "chips": 421,
+   "no_search_%": 67.6959619952,
+   "formula_no_search_%": 64.6080760095,
+   "tries_today": 19.8194774347,
+   "tries_ai": 5.9928741093,
+   "ms_today": 28.7444180523,
+   "ms_ai": 9.7097387173,
+   "bg_within1_%": 97.8622327791,
+   "hsi_within1_%": 69.8337292162,
+   "ldo_within1_%": 99.7624703088,
+   "speedup_x": 2.9603698811
+  },
+  {
+   "wafer": "MA3-W04",
+   "in_reported_test": true,
+   "chips": 421,
+   "no_search_%": 85.7482185273,
+   "formula_no_search_%": 76.9596199525,
+   "tries_today": 19.7339667458,
+   "tries_ai": 4.4703087886,
+   "ms_today": 28.6175771971,
+   "ms_ai": 6.9002375297,
+   "bg_within1_%": 100.0,
+   "hsi_within1_%": 85.7482185273,
+   "ldo_within1_%": 100.0,
+   "speedup_x": 4.1473321859
+  },
+  {
+   "wafer": "MA3-W05",
+   "in_reported_test": false,
+   "chips": 421,
+   "no_search_%": 90.2612826603,
+   "formula_no_search_%": 74.8218527316,
+   "tries_today": 19.7767220903,
+   "tries_ai": 4.1543942993,
+   "ms_today": 28.7296912114,
+   "ms_ai": 6.2641330166,
+   "bg_within1_%": 100.0,
+   "hsi_within1_%": 90.2612826603,
+   "ldo_within1_%": 100.0,
+   "speedup_x": 4.5863794934
+  }
+ ],
+ "lowo_pmic": [
+  {
+   "product": "PMIC-P1",
+   "wafer": "PA1-W01",
+   "in_reported_test": true,
+   "chips": 553,
+   "no_search_%": 79.9276672694,
+   "tries_today": 44.5931283906,
+   "tries_ai": 11.2730560579,
+   "fewer_tries_x": 3.9557266603
+  },
+  {
+   "product": "PMIC-P1",
+   "wafer": "PA1-W02",
+   "in_reported_test": false,
+   "chips": 553,
+   "no_search_%": 78.1193490054,
+   "tries_today": 44.6401446655,
+   "tries_ai": 11.5497287523,
+   "fewer_tries_x": 3.8650383592
+  },
+  {
+   "product": "PMIC-P1",
+   "wafer": "PA1-W03",
+   "in_reported_test": false,
+   "chips": 553,
+   "no_search_%": 78.1193490054,
+   "tries_today": 44.6708860759,
+   "tries_ai": 11.4990958409,
+   "fewer_tries_x": 3.8847303035
+  },
+  {
+   "product": "PMIC-P1",
+   "wafer": "PA1-W04",
+   "in_reported_test": false,
+   "chips": 553,
+   "no_search_%": 79.5660036166,
+   "tries_today": 44.6962025316,
+   "tries_ai": 11.349005425,
+   "fewer_tries_x": 3.9383365201
+  },
+  {
+   "product": "PMIC-P1",
+   "wafer": "PA1-W05",
+   "in_reported_test": false,
+   "chips": 553,
+   "no_search_%": 78.842676311,
+   "tries_today": 44.6383363472,
+   "tries_ai": 11.4810126582,
+   "fewer_tries_x": 3.8880138605
+  },
+  {
+   "product": "PMIC-P1",
+   "wafer": "PA2-W01",
+   "in_reported_test": false,
+   "chips": 553,
+   "no_search_%": 70.8860759494,
+   "tries_today": 44.6871609403,
+   "tries_ai": 12.4755877034,
+   "fewer_tries_x": 3.5819684012
+  },
+  {
+   "product": "PMIC-P1",
+   "wafer": "PA2-W02",
+   "in_reported_test": false,
+   "chips": 553,
+   "no_search_%": 80.8318264014,
+   "tries_today": 44.6600361664,
+   "tries_ai": 11.4032549729,
+   "fewer_tries_x": 3.916428798
+  },
+  {
+   "product": "PMIC-P1",
+   "wafer": "PA2-W03",
+   "in_reported_test": false,
+   "chips": 553,
+   "no_search_%": 76.130198915,
+   "tries_today": 44.616636528,
+   "tries_ai": 11.8896925859,
+   "fewer_tries_x": 3.7525475285
+  },
+  {
+   "product": "PMIC-P1",
+   "wafer": "PA2-W04",
+   "in_reported_test": false,
+   "chips": 553,
+   "no_search_%": 76.6726943942,
+   "tries_today": 44.6057866184,
+   "tries_ai": 11.7179023508,
+   "fewer_tries_x": 3.8066358025
+  },
+  {
+   "product": "PMIC-P1",
+   "wafer": "PA2-W05",
+   "in_reported_test": true,
+   "chips": 553,
+   "no_search_%": 73.417721519,
+   "tries_today": 44.6726943942,
+   "tries_ai": 12.1844484629,
+   "fewer_tries_x": 3.6663698427
+  },
+  {
+   "product": "PMIC-P1",
+   "wafer": "PA3-W01",
+   "in_reported_test": false,
+   "chips": 553,
+   "no_search_%": 79.2043399638,
+   "tries_today": 44.7613019892,
+   "tries_ai": 11.4285714286,
+   "fewer_tries_x": 3.9166139241
+  },
+  {
+   "product": "PMIC-P1",
+   "wafer": "PA3-W02",
+   "in_reported_test": true,
+   "chips": 553,
+   "no_search_%": 82.6401446655,
+   "tries_today": 44.6419529837,
+   "tries_ai": 11.2079566004,
+   "fewer_tries_x": 3.9830590513
+  },
+  {
+   "product": "PMIC-P1",
+   "wafer": "PA3-W03",
+   "in_reported_test": false,
+   "chips": 553,
+   "no_search_%": 79.9276672694,
+   "tries_today": 44.6383363472,
+   "tries_ai": 11.3471971067,
+   "fewer_tries_x": 3.9338645418
+  },
+  {
+   "product": "PMIC-P1",
+   "wafer": "PA3-W04",
+   "in_reported_test": true,
+   "chips": 553,
+   "no_search_%": 79.2043399638,
+   "tries_today": 44.6889692586,
+   "tries_ai": 11.4611211573,
+   "fewer_tries_x": 3.8991795519
+  },
+  {
+   "product": "PMIC-P1",
+   "wafer": "PA3-W05",
+   "in_reported_test": false,
+   "chips": 553,
+   "no_search_%": 71.4285714286,
+   "tries_today": 44.6401446655,
+   "tries_ai": 12.0126582278,
+   "fewer_tries_x": 3.7160921271
+  },
+  {
+   "product": "PMIC-C7",
+   "wafer": "PC1-W01",
+   "in_reported_test": false,
+   "chips": 553,
+   "no_search_%": 71.609403255,
+   "tries_today": 44.6980108499,
+   "tries_ai": 12.8028933092,
+   "fewer_tries_x": 3.4912429379
+  },
+  {
+   "product": "PMIC-C7",
+   "wafer": "PC1-W02",
+   "in_reported_test": false,
+   "chips": 553,
+   "no_search_%": 75.5877034358,
+   "tries_today": 44.6184448463,
+   "tries_ai": 11.5388788427,
+   "fewer_tries_x": 3.8667920389
+  },
+  {
+   "product": "PMIC-P2",
+   "wafer": "PB1-W01",
+   "in_reported_test": false,
+   "chips": 553,
+   "no_search_%": 80.4701627486,
+   "tries_today": 44.6528028933,
+   "tries_ai": 11.3851717902,
+   "fewer_tries_x": 3.9220139771
+  },
+  {
+   "product": "PMIC-P2",
+   "wafer": "PB1-W02",
+   "in_reported_test": false,
+   "chips": 553,
+   "no_search_%": 79.3851717902,
+   "tries_today": 44.6636528029,
+   "tries_ai": 11.5587703436,
+   "fewer_tries_x": 3.864048811
+  },
+  {
+   "product": "PMIC-P2",
+   "wafer": "PB1-W03",
+   "in_reported_test": false,
+   "chips": 553,
+   "no_search_%": 81.1934900542,
+   "tries_today": 44.6564195298,
+   "tries_ai": 11.3435804702,
+   "fewer_tries_x": 3.9367128965
+  }
+ ],
+ "lowo_sensor": [
+  {
+   "product": "ACC-2G",
+   "wafer": "SA1-W01",
+   "rows": 1320,
+   "Tight_%": 69.3939393939,
+   "Medium_%": 95.6060606061,
+   "Loose_%": 97.7272727273,
+   "Medium_fleet_%": 44.3939393939
+  },
+  {
+   "product": "ACC-2G",
+   "wafer": "SA1-W02",
+   "rows": 1326,
+   "Tight_%": 66.4404223228,
+   "Medium_%": 96.0030165913,
+   "Loose_%": 98.6425339367,
+   "Medium_fleet_%": 18.778280543
+  },
+  {
+   "product": "ACC-2G",
+   "wafer": "SA1-W03",
+   "rows": 1302,
+   "Tight_%": 68.8940092166,
+   "Medium_%": 96.7741935484,
+   "Loose_%": 98.7711213518,
+   "Medium_fleet_%": 60.6758832565
+  },
+  {
+   "product": "ACC-2G",
+   "wafer": "SA1-W04",
+   "rows": 1341,
+   "Tight_%": 68.754660701,
+   "Medium_%": 96.1968680089,
+   "Loose_%": 98.5831469053,
+   "Medium_fleet_%": 25.6524981357
+  },
+  {
+   "product": "ACC-2G",
+   "wafer": "SA1-W05",
+   "rows": 1374,
+   "Tight_%": 66.885007278,
+   "Medium_%": 95.8515283843,
+   "Loose_%": 98.6171761281,
+   "Medium_fleet_%": 46.8704512373
+  },
+  {
+   "product": "ACC-2G",
+   "wafer": "SA2-W01",
+   "rows": 1281,
+   "Tight_%": 68.3840749415,
+   "Medium_%": 96.6432474629,
+   "Loose_%": 98.0483996877,
+   "Medium_fleet_%": 4.293520687
+  },
+  {
+   "product": "ACC-2G",
+   "wafer": "SA2-W02",
+   "rows": 1341,
+   "Tight_%": 70.7680835198,
+   "Medium_%": 96.495152871,
+   "Loose_%": 98.2102908277,
+   "Medium_fleet_%": 12.9753914989
+  },
+  {
+   "product": "ACC-2G",
+   "wafer": "SA2-W03",
+   "rows": 1344,
+   "Tight_%": 68.75,
+   "Medium_%": 96.6517857143,
+   "Loose_%": 98.2142857143,
+   "Medium_fleet_%": 5.6547619048
+  },
+  {
+   "product": "ACC-2G",
+   "wafer": "SA2-W04",
+   "rows": 1341,
+   "Tight_%": 70.8426547353,
+   "Medium_%": 97.3154362416,
+   "Loose_%": 98.4340044743,
+   "Medium_fleet_%": 5.5182699478
+  },
+  {
+   "product": "ACC-2G",
+   "wafer": "SA2-W05",
+   "rows": 1335,
+   "Tight_%": 68.3895131086,
+   "Medium_%": 96.1048689139,
+   "Loose_%": 97.6029962547,
+   "Medium_fleet_%": 51.9850187266
+  },
+  {
+   "product": "ACC-2G",
+   "wafer": "SA3-W01",
+   "rows": 1353,
+   "Tight_%": 70.5838876571,
+   "Medium_%": 96.3784183296,
+   "Loose_%": 98.2261640798,
+   "Medium_fleet_%": 20.177383592
+  },
+  {
+   "product": "ACC-2G",
+   "wafer": "SA3-W02",
+   "rows": 1359,
+   "Tight_%": 70.4194260486,
+   "Medium_%": 96.6887417219,
+   "Loose_%": 98.749080206,
+   "Medium_fleet_%": 5.9602649007
+  },
+  {
+   "product": "ACC-2G",
+   "wafer": "SA3-W03",
+   "rows": 1317,
+   "Tight_%": 68.4889901291,
+   "Medium_%": 95.6719817768,
+   "Loose_%": 98.1776765376,
+   "Medium_fleet_%": 6.4540622627
+  },
+  {
+   "product": "ACC-2G",
+   "wafer": "SA3-W04",
+   "rows": 1356,
+   "Tight_%": 69.395280236,
+   "Medium_%": 95.3539823009,
+   "Loose_%": 97.5663716814,
+   "Medium_fleet_%": 10.3244837758
+  },
+  {
+   "product": "ACC-2G",
+   "wafer": "SA3-W05",
+   "rows": 1293,
+   "Tight_%": 67.6720804331,
+   "Medium_%": 94.9729311678,
+   "Loose_%": 97.4477958237,
+   "Medium_fleet_%": 0.0
+  },
+  {
+   "product": "ACC-16G",
+   "wafer": "SC1-W01",
+   "rows": 1659,
+   "Tight_%": 68.5352622061,
+   "Medium_%": 95.8408679928,
+   "Loose_%": 98.6136226643,
+   "Medium_fleet_%": null
+  },
+  {
+   "product": "ACC-16G",
+   "wafer": "SC1-W02",
+   "rows": 1659,
+   "Tight_%": 69.3791440627,
+   "Medium_%": 96.5641952984,
+   "Loose_%": 98.7341772152,
+   "Medium_fleet_%": null
+  },
+  {
+   "product": "ACC-8G",
+   "wafer": "SB1-W01",
+   "rows": 1659,
+   "Tight_%": 69.9216395419,
+   "Medium_%": 95.7203134418,
+   "Loose_%": 97.7697408077,
+   "Medium_fleet_%": null
+  },
+  {
+   "product": "ACC-8G",
+   "wafer": "SB1-W02",
+   "rows": 1659,
+   "Tight_%": 68.7160940325,
+   "Medium_%": 95.9011452682,
+   "Loose_%": 98.0711271851,
+   "Medium_fleet_%": null
+  },
+  {
+   "product": "ACC-8G",
+   "wafer": "SB1-W03",
+   "rows": 1659,
+   "Tight_%": 66.063893912,
+   "Medium_%": 95.9614225437,
+   "Loose_%": 98.191681736,
+   "Medium_fleet_%": null
+  }
+ ],
+ "lowo_soc": [
+  {
+   "wafer": "QA1-W01",
+   "chips": 308,
+   "rule_$": 12095.0,
+   "plan_$": 18035.0,
+   "uplift_%": 49.1112029764
+  },
+  {
+   "wafer": "QA1-W02",
+   "chips": 308,
+   "rule_$": 14015.0,
+   "plan_$": 20065.0,
+   "uplift_%": 43.168034249
+  },
+  {
+   "wafer": "QA1-W03",
+   "chips": 308,
+   "rule_$": 16910.0,
+   "plan_$": 23400.0,
+   "uplift_%": 38.3796570077
+  },
+  {
+   "wafer": "QA1-W04",
+   "chips": 308,
+   "rule_$": 11890.0,
+   "plan_$": 18325.0,
+   "uplift_%": 54.1211101766
+  },
+  {
+   "wafer": "QA1-W05",
+   "chips": 308,
+   "rule_$": 12475.0,
+   "plan_$": 18470.0,
+   "uplift_%": 48.0561122244
+  },
+  {
+   "wafer": "QA2-W01",
+   "chips": 308,
+   "rule_$": 13395.0,
+   "plan_$": 19775.0,
+   "uplift_%": 47.6297125793
+  },
+  {
+   "wafer": "QA2-W02",
+   "chips": 308,
+   "rule_$": 13885.0,
+   "plan_$": 20210.0,
+   "uplift_%": 45.5527547713
+  },
+  {
+   "wafer": "QA2-W03",
+   "chips": 308,
+   "rule_$": 18020.0,
+   "plan_$": 24125.0,
+   "uplift_%": 33.8790233074
+  },
+  {
+   "wafer": "QA2-W04",
+   "chips": 308,
+   "rule_$": 11990.0,
+   "plan_$": 17600.0,
+   "uplift_%": 46.7889908257
+  },
+  {
+   "wafer": "QA2-W05",
+   "chips": 308,
+   "rule_$": 11945.0,
+   "plan_$": 18325.0,
+   "uplift_%": 53.411469234
+  },
+  {
+   "wafer": "QA3-W01",
+   "chips": 308,
+   "rule_$": 15680.0,
+   "plan_$": 21950.0,
+   "uplift_%": 39.987244898
+  },
+  {
+   "wafer": "QA3-W02",
+   "chips": 308,
+   "rule_$": 15355.0,
+   "plan_$": 21515.0,
+   "uplift_%": 40.1172256594
+  },
+  {
+   "wafer": "QA3-W03",
+   "chips": 308,
+   "rule_$": 11200.0,
+   "plan_$": 17745.0,
+   "uplift_%": 58.4375
+  },
+  {
+   "wafer": "QA3-W04",
+   "chips": 308,
+   "rule_$": 11475.0,
+   "plan_$": 17745.0,
+   "uplift_%": 54.6405228758
+  },
+  {
+   "wafer": "QA3-W05",
+   "chips": 308,
+   "rule_$": 17965.0,
+   "plan_$": 24125.0,
+   "uplift_%": 34.2888950738
+  },
+  {
+   "wafer": "QA4-W01",
+   "chips": 308,
+   "rule_$": 18130.0,
+   "plan_$": 24125.0,
+   "uplift_%": 33.0667402096
+  },
+  {
+   "wafer": "QA4-W02",
+   "chips": 308,
+   "rule_$": 17855.0,
+   "plan_$": 24125.0,
+   "uplift_%": 35.1162139457
+  },
+  {
+   "wafer": "QA4-W03",
+   "chips": 308,
+   "rule_$": 17965.0,
+   "plan_$": 24125.0,
+   "uplift_%": 34.2888950738
+  },
+  {
+   "wafer": "QA4-W04",
+   "chips": 308,
+   "rule_$": 17965.0,
+   "plan_$": 24125.0,
+   "uplift_%": 34.2888950738
+  },
+  {
+   "wafer": "QA4-W05",
+   "chips": 308,
+   "rule_$": 18020.0,
+   "plan_$": 24125.0,
+   "uplift_%": 33.8790233074
+  }
+ ],
+ "lowo_drift": [
+  {
+   "tuned_on": "MC1-W01",
+   "tested_on": "MC1-W02",
+   "chips": 421,
+   "today_%": 90.7363420428,
+   "zero_shot_%": 99.7624703088,
+   "fine_tuned_median_%": 99.7624703088,
+   "fine_tuned_min_%": 99.5249406176,
+   "fine_tuned_max_%": 99.7624703088
+  },
+  {
+   "tuned_on": "MC1-W02",
+   "tested_on": "MC1-W01",
+   "chips": 421,
+   "today_%": 90.7363420428,
+   "zero_shot_%": 99.0498812352,
+   "fine_tuned_median_%": 99.0498812352,
+   "fine_tuned_min_%": 99.0498812352,
+   "fine_tuned_max_%": 99.2874109264
+  }
+ ],
+ "summary": [
+  {
+   "result": "MCU: chips needing no search",
+   "reported (one split)": "83.0%",
+   "median across wafers": "83.4%",
+   "range (worst to best wafer)": "67.0% to 90.7%",
+   "wafers": 15,
+   "note": ""
+  },
+  {
+   "result": "MCU: tuning speed-up",
+   "reported (one split)": "3.9x",
+   "median across wafers": "3.9x",
+   "range (worst to best wafer)": "2.9x to 4.7x",
+   "wafers": 15,
+   "note": ""
+  },
+  {
+   "result": "Power chip: fewer tries",
+   "reported (one split)": "3.9x",
+   "median across wafers": "3.9x",
+   "range (worst to best wafer)": "3.6x to 4.0x",
+   "wafers": 15,
+   "note": ""
+  },
+  {
+   "result": "Power chip P2/C7 (new versions): fewer tries",
+   "reported (one split)": "3.9x",
+   "median across wafers": "3.9x",
+   "range (worst to best wafer)": "3.5x to 3.9x",
+   "wafers": 5,
+   "note": "never trained on these versions"
+  },
+  {
+   "result": "Sensor: pass with 1 oven pass (Medium)",
+   "reported (one split)": "96.0%",
+   "median across wafers": "96.2%",
+   "range (worst to best wafer)": "95.0% to 97.3%",
+   "wafers": 15,
+   "note": ""
+  },
+  {
+   "result": "Sensor: pass with 1 oven pass (Tight)",
+   "reported (one split)": "69.3%",
+   "median across wafers": "68.8%",
+   "range (worst to best wafer)": "66.4% to 70.8%",
+   "wafers": 15,
+   "note": "tight grade keeps the 3-temperature test"
+  },
+  {
+   "result": "Sensor 8G/16G (new versions), Medium",
+   "reported (one split)": "96.0%",
+   "median across wafers": "95.9%",
+   "range (worst to best wafer)": "95.7% to 96.6%",
+   "wafers": 5,
+   "note": "2-3 wafers per version"
+  },
+  {
+   "result": "SoC: revenue from the plan, per wafer",
+   "reported (one split)": "34.7%",
+   "median across wafers": "41.6%",
+   "range (worst to best wafer)": "33.1% to 58.4%",
+   "wafers": 20,
+   "note": "weekly plan over all wafers: +34.7%"
+  },
+  {
+   "result": "MCU-C: final-test pass with drift fix",
+   "reported (one split)": "99.8%",
+   "median across wafers": "99.4%",
+   "range (worst to best wafer)": "99.0% to 99.8%",
+   "wafers": 2,
+   "note": "only 2 wafers: early result"
+  }
+ ],
+ "objective": [
+  {
+   "setting": "saved (600 trees, depth 10)",
+   "within_1_step_%": 80.4592240697,
+   "HSI_ms_per_chip": 5.2825019794,
+   "rank_by_accuracy": 3,
+   "rank_by_test_time": 3
+  },
+  {
+   "setting": "300 trees, no depth limit",
+   "within_1_step_%": 80.5859065717,
+   "HSI_ms_per_chip": 5.2676167854,
+   "rank_by_accuracy": 2,
+   "rank_by_test_time": 1
+  },
+  {
+   "setting": "300 trees, depth 16, 70% features",
+   "within_1_step_%": 80.6017418844,
+   "HSI_ms_per_chip": 5.2737925574,
+   "rank_by_accuracy": 1,
+   "rank_by_test_time": 2
+  },
+  {
+   "setting": "200 trees, depth 10, 50% features",
+   "within_1_step_%": 80.2137767221,
+   "HSI_ms_per_chip": 5.3346001584,
+   "rank_by_accuracy": 4,
+   "rank_by_test_time": 4
+  },
+  {
+   "setting": "400 trees, depth 24, leaf 1",
+   "within_1_step_%": 80.1425178147,
+   "HSI_ms_per_chip": 5.3368171021,
+   "rank_by_accuracy": 5,
+   "rank_by_test_time": 5
+  }
+ ],
+ "budget": [
+  {
+   "chip": "MCU",
+   "budget": 0,
+   "tries_per_chip": 7.4964370546,
+   "today": 19.8022565321,
+   "fallback_%": 58.0166270784,
+   "ms_per_chip": 11.7289786223
+  },
+  {
+   "chip": "Power chip",
+   "budget": 0,
+   "tries_per_chip": 16.7622061483,
+   "today": 25.32,
+   "fallback_%": 93.7613019892,
+   "ms_per_chip": null
+  },
+  {
+   "chip": "MCU",
+   "budget": 1,
+   "tries_per_chip": 4.7185273159,
+   "today": 19.8022565321,
+   "fallback_%": 16.9833729216,
+   "ms_per_chip": 7.3703087886
+  },
+  {
+   "chip": "Power chip",
+   "budget": 1,
+   "tries_per_chip": 7.2798372514,
+   "today": 25.32,
+   "fallback_%": 20.6600361664,
+   "ms_per_chip": null
+  },
+  {
+   "chip": "MCU",
+   "budget": 2,
+   "tries_per_chip": 4.2024940618,
+   "today": 19.8022565321,
+   "fallback_%": 6.6508313539,
+   "ms_per_chip": 6.3401425178
+  },
+  {
+   "chip": "Power chip",
+   "budget": 2,
+   "tries_per_chip": 6.3792947559,
+   "today": 25.32,
+   "fallback_%": 0.5424954792,
+   "ms_per_chip": null
+  },
+  {
+   "chip": "MCU",
+   "budget": 3,
+   "tries_per_chip": 3.9958432304,
+   "today": 19.8022565321,
+   "fallback_%": 1.4845605701,
+   "ms_per_chip": 5.9268408551
+  },
+  {
+   "chip": "Power chip",
+   "budget": 3,
+   "tries_per_chip": 6.3630198915,
+   "today": 25.32,
+   "fallback_%": 0.0,
+   "ms_per_chip": null
+  }
+ ],
+ "soc_curve_validation": [
+  {
+   "margin_MHz": 0,
+   "chips": 1232,
+   "guard_escapes": 181,
+   "guard_escape_%": 14.6915584416,
+   "guard_revenue_%": 99.8408846812,
+   "hybrid_tested_%": 0.0,
+   "hybrid_escapes": 181,
+   "hybrid_escape_%": 14.6915584416,
+   "hybrid_revenue_%": 99.8408846812
+  },
+  {
+   "margin_MHz": 10,
+   "chips": 1232,
+   "guard_escapes": 101,
+   "guard_escape_%": 8.1980519481,
+   "guard_revenue_%": 99.0055292573,
+   "hybrid_tested_%": 2.8409090909,
+   "hybrid_escapes": 99,
+   "hybrid_escape_%": 8.0357142857,
+   "hybrid_revenue_%": 99.7215481921
+  },
+  {
+   "margin_MHz": 20,
+   "chips": 1232,
+   "guard_escapes": 57,
+   "guard_escape_%": 4.6266233766,
+   "guard_revenue_%": 98.369067982,
+   "hybrid_tested_%": 5.8441558442,
+   "hybrid_escapes": 56,
+   "hybrid_escape_%": 4.5454545455,
+   "hybrid_revenue_%": 99.7613270218
+  },
+  {
+   "margin_MHz": 30,
+   "chips": 1232,
+   "guard_escapes": 27,
+   "guard_escape_%": 2.1915584416,
+   "guard_revenue_%": 97.8917220255,
+   "hybrid_tested_%": 8.1168831169,
+   "hybrid_escapes": 25,
+   "hybrid_escape_%": 2.0292207792,
+   "hybrid_revenue_%": 99.8011058515
+  },
+  {
+   "margin_MHz": 40,
+   "chips": 1232,
+   "guard_escapes": 14,
+   "guard_escape_%": 1.1363636364,
+   "guard_revenue_%": 97.2552607502,
+   "hybrid_tested_%": 11.3636363636,
+   "hybrid_escapes": 13,
+   "hybrid_escape_%": 1.0551948052,
+   "hybrid_revenue_%": 99.9602211703
+  },
+  {
+   "margin_MHz": 50,
+   "chips": 1232,
+   "guard_escapes": 7,
+   "guard_escape_%": 0.5681818182,
+   "guard_revenue_%": 96.5790206452,
+   "hybrid_tested_%": 14.0422077922,
+   "hybrid_escapes": 7,
+   "hybrid_escape_%": 0.5681818182,
+   "hybrid_revenue_%": 100.0397788297
+  },
+  {
+   "margin_MHz": 60,
+   "chips": 1232,
+   "guard_escapes": 1,
+   "guard_escape_%": 0.0811688312,
+   "guard_revenue_%": 96.3483034329,
+   "hybrid_tested_%": 15.4220779221,
+   "hybrid_escapes": 1,
+   "hybrid_escape_%": 0.0811688312,
+   "hybrid_revenue_%": 100.0397788297
+  },
+  {
+   "margin_MHz": 70,
+   "chips": 1232,
+   "guard_escapes": 1,
+   "guard_escape_%": 0.0811688312,
+   "guard_revenue_%": 95.8709574764,
+   "hybrid_tested_%": 18.1006493506,
+   "hybrid_escapes": 1,
+   "hybrid_escape_%": 0.0811688312,
+   "hybrid_revenue_%": 100.0397788297
+  },
+  {
+   "margin_MHz": 80,
+   "chips": 1232,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 95.5129480091,
+   "hybrid_tested_%": 20.211038961,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 90,
+   "chips": 1232,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 95.3936115199,
+   "hybrid_tested_%": 21.4285714286,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 100,
+   "chips": 1232,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 94.9162655635,
+   "hybrid_tested_%": 23.4577922078,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 110,
+   "chips": 1232,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 94.4070965432,
+   "hybrid_tested_%": 25.0811688312,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 120,
+   "chips": 1232,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 93.8422371614,
+   "hybrid_tested_%": 27.1103896104,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 130,
+   "chips": 1232,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 93.356935439,
+   "hybrid_tested_%": 29.1396103896,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 140,
+   "chips": 1232,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 93.0466605672,
+   "hybrid_tested_%": 30.6818181818,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 150,
+   "chips": 1232,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 92.7841202912,
+   "hybrid_tested_%": 31.9805194805,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 160,
+   "chips": 1232,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 92.5931819086,
+   "hybrid_tested_%": 33.2792207792,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  }
+ ],
+ "soc_curve_test": [
+  {
+   "margin_MHz": 0,
+   "chips": 1540,
+   "guard_escapes": 218,
+   "guard_escape_%": 14.1558441558,
+   "guard_revenue_%": 100.0326797386,
+   "hybrid_tested_%": 0.0,
+   "hybrid_escapes": 218,
+   "hybrid_escape_%": 14.1558441558,
+   "hybrid_revenue_%": 100.0326797386
+  },
+  {
+   "margin_MHz": 10,
+   "chips": 1540,
+   "guard_escapes": 142,
+   "guard_escape_%": 9.2207792208,
+   "guard_revenue_%": 99.6862745098,
+   "hybrid_tested_%": 1.5584415584,
+   "hybrid_escapes": 142,
+   "hybrid_escape_%": 9.2207792208,
+   "hybrid_revenue_%": 100.1437908497
+  },
+  {
+   "margin_MHz": 20,
+   "chips": 1540,
+   "guard_escapes": 84,
+   "guard_escape_%": 5.4545454545,
+   "guard_revenue_%": 99.0980392157,
+   "hybrid_tested_%": 3.7012987013,
+   "hybrid_escapes": 84,
+   "hybrid_escape_%": 5.4545454545,
+   "hybrid_revenue_%": 100.0980392157
+  },
+  {
+   "margin_MHz": 30,
+   "chips": 1540,
+   "guard_escapes": 43,
+   "guard_escape_%": 2.7922077922,
+   "guard_revenue_%": 98.6535947712,
+   "hybrid_tested_%": 5.4545454545,
+   "hybrid_escapes": 43,
+   "hybrid_escape_%": 2.7922077922,
+   "hybrid_revenue_%": 99.9673202614
+  },
+  {
+   "margin_MHz": 40,
+   "chips": 1540,
+   "guard_escapes": 25,
+   "guard_escape_%": 1.6233766234,
+   "guard_revenue_%": 98.1895424837,
+   "hybrid_tested_%": 7.2727272727,
+   "hybrid_escapes": 25,
+   "hybrid_escape_%": 1.6233766234,
+   "hybrid_revenue_%": 99.9673202614
+  },
+  {
+   "margin_MHz": 50,
+   "chips": 1540,
+   "guard_escapes": 12,
+   "guard_escape_%": 0.7792207792,
+   "guard_revenue_%": 97.8496732026,
+   "hybrid_tested_%": 8.961038961,
+   "hybrid_escapes": 12,
+   "hybrid_escape_%": 0.7792207792,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 60,
+   "chips": 1540,
+   "guard_escapes": 5,
+   "guard_escape_%": 0.3246753247,
+   "guard_revenue_%": 97.4444444444,
+   "hybrid_tested_%": 10.7142857143,
+   "hybrid_escapes": 5,
+   "hybrid_escape_%": 0.3246753247,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 70,
+   "chips": 1540,
+   "guard_escapes": 1,
+   "guard_escape_%": 0.0649350649,
+   "guard_revenue_%": 96.8039215686,
+   "hybrid_tested_%": 13.3116883117,
+   "hybrid_escapes": 1,
+   "hybrid_escape_%": 0.0649350649,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 80,
+   "chips": 1540,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 96.2745098039,
+   "hybrid_tested_%": 15.0649350649,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 90,
+   "chips": 1540,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 95.7581699346,
+   "hybrid_tested_%": 17.5324675325,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 100,
+   "chips": 1540,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 95.3725490196,
+   "hybrid_tested_%": 19.4155844156,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 110,
+   "chips": 1540,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 94.6993464052,
+   "hybrid_tested_%": 21.8181818182,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 120,
+   "chips": 1540,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 94.2352941176,
+   "hybrid_tested_%": 24.1558441558,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 130,
+   "chips": 1540,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 93.3267973856,
+   "hybrid_tested_%": 27.4025974026,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 140,
+   "chips": 1540,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 92.6339869281,
+   "hybrid_tested_%": 29.8051948052,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 150,
+   "chips": 1540,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 92.1111111111,
+   "hybrid_tested_%": 32.1428571429,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  },
+  {
+   "margin_MHz": 160,
+   "chips": 1540,
+   "guard_escapes": 0,
+   "guard_escape_%": 0.0,
+   "guard_revenue_%": 91.3660130719,
+   "hybrid_tested_%": 35.2597402597,
+   "hybrid_escapes": 0,
+   "hybrid_escape_%": 0.0,
+   "hybrid_revenue_%": 100.0
+  }
+ ],
+ "soc_rule_a_MHz": 60,
+ "soc_rule_b_MHz": 80,
+ "soc_hybrid_MHz": 80,
+ "speed_test_ms": 450.2124675324676,
+ "baselines": [
+  {
+   "task": "MCU trims",
+   "baseline": "today's binary search / physics formula",
+   "method": "Random Forest, predict then check",
+   "measure": "tries per chip",
+   "baseline value": "19.8",
+   "method value": "4.8",
+   "decision": "Keep ML",
+   "source": "here"
+  },
+  {
+   "task": "MCU trims",
+   "baseline": "physics formula",
+   "method": "Random Forest",
+   "measure": "chips needing no search",
+   "baseline value": "70%",
+   "method value": "83%",
+   "decision": "Keep ML",
+   "source": "here"
+  },
+  {
+   "task": "MCU-C final test",
+   "baseline": "trim to 1.200 V",
+   "method": "drift-aware target (fine-tuned)",
+   "measure": "final-test pass",
+   "baseline value": "90.7%",
+   "method value": "99.4%",
+   "decision": "Keep (early: 2 wafers)",
+   "source": "here"
+  },
+  {
+   "task": "MCU fuse maps",
+   "baseline": "burn as generated (no check)",
+   "method": "rules from the fuse schema",
+   "measure": "bad maps burned",
+   "baseline value": "406 of 406",
+   "method value": "0 (no false alarms)",
+   "decision": "Keep rules",
+   "source": "notebook 00/01"
+  },
+  {
+   "task": "Power-chip rails",
+   "baseline": "today's binary search",
+   "method": "Ridge from one reference reading",
+   "measure": "tries per chip",
+   "baseline value": "44.6",
+   "method value": "11.5",
+   "decision": "Keep ML",
+   "source": "here"
+  },
+  {
+   "task": "Power-chip customer settings",
+   "baseline": "ML on raw fields",
+   "method": "datasheet rules",
+   "measure": "requests judged right",
+   "baseline value": "96-98.5%",
+   "method value": "100%",
+   "decision": "Keep rules",
+   "source": "notebook 02"
+  },
+  {
+   "task": "Power-chip current sense",
+   "baseline": "2-point formula",
+   "method": "Ridge (2 points + process data)",
+   "measure": "worst error (mA)",
+   "baseline value": "6.6",
+   "method value": "3.3",
+   "decision": "Keep ML",
+   "source": "notebook 02"
+  },
+  {
+   "task": "Sensor calibration",
+   "baseline": "fleet average (1 insertion)",
+   "method": "Ridge from 25 C data",
+   "measure": "pass, Medium grade",
+   "baseline value": "13%",
+   "method value": "96%",
+   "decision": "Keep ML (not Tight grade)",
+   "source": "here"
+  },
+  {
+   "task": "SoC product mix",
+   "baseline": "best product each chip qualifies for",
+   "method": "integer program vs demand",
+   "measure": "revenue",
+   "baseline value": "100%",
+   "method value": "+34.7% (every wafer +33% or more)",
+   "decision": "Keep optimiser",
+   "source": "here"
+  },
+  {
+   "task": "SoC speed (all chips)",
+   "baseline": "450 ms speed test",
+   "method": "Ridge + 80 MHz margin, no test",
+   "measure": "revenue vs full test",
+   "baseline value": "100%",
+   "method value": "96.3%",
+   "decision": "Reject (costs more than it saves)",
+   "source": "here"
+  },
+  {
+   "task": "SoC memory repair",
+   "baseline": "greedy repair",
+   "method": "exact branch and bound",
+   "measure": "arrays repaired (of 3,000)",
+   "baseline value": "1,843",
+   "method value": "1,860",
+   "decision": "Keep exact",
+   "source": "notebook 04"
+  }
+ ],
+ "ood": [
+  {
+   "chip": "MCU",
+   "group": "MCU-A test wafers",
+   "chips": 1684,
+   "out_of_range_%": 0.2375296912,
+   "fallback_if_trusted_%": 16.9833729216,
+   "fallback_among_flagged_%": 0.0,
+   "fallback_among_normal_%": 17.0238095238
+  },
+  {
+   "chip": "MCU",
+   "group": "MCU-B (new)",
+   "chips": 1263,
+   "out_of_range_%": 0.4750593824,
+   "fallback_if_trusted_%": 17.6563737134,
+   "fallback_among_flagged_%": 16.6666666667,
+   "fallback_among_normal_%": 17.661097852
+  },
+  {
+   "chip": "MCU",
+   "group": "MCU-C (new)",
+   "chips": 842,
+   "out_of_range_%": 75.1781472684,
+   "fallback_if_trusted_%": 21.9714964371,
+   "fallback_among_flagged_%": 23.8546603476,
+   "fallback_among_normal_%": 16.2679425837
+  },
+  {
+   "chip": "Power chip",
+   "group": "PMIC-P1 test wafers",
+   "chips": 2212,
+   "out_of_range_%": 0.0904159132,
+   "fallback_if_trusted_%": 20.6600361664,
+   "fallback_among_flagged_%": 100.0,
+   "fallback_among_normal_%": 20.5882352941
+  },
+  {
+   "chip": "Power chip",
+   "group": "PMIC-P2 (new)",
+   "chips": 1659,
+   "out_of_range_%": 0.7233273056,
+   "fallback_if_trusted_%": 19.6503918023,
+   "fallback_among_flagged_%": 16.6666666667,
+   "fallback_among_normal_%": 19.6721311475
+  },
+  {
+   "chip": "Power chip",
+   "group": "PMIC-C7 (new)",
+   "chips": 1106,
+   "out_of_range_%": 4.972875226,
+   "fallback_if_trusted_%": 26.4014466546,
+   "fallback_among_flagged_%": 29.0909090909,
+   "fallback_among_normal_%": 26.2607040913
+  },
+  {
+   "chip": "Sensor",
+   "group": "ACC-2G production",
+   "chips": 19983,
+   "out_of_range_%": 1.1910123605,
+   "fallback_if_trusted_%": null,
+   "fallback_among_flagged_%": null,
+   "fallback_among_normal_%": null
+  },
+  {
+   "chip": "Sensor",
+   "group": "ACC-8G (new)",
+   "chips": 4977,
+   "out_of_range_%": 5.7866184448,
+   "fallback_if_trusted_%": null,
+   "fallback_among_flagged_%": null,
+   "fallback_among_normal_%": null
+  },
+  {
+   "chip": "Sensor",
+   "group": "ACC-16G (new)",
+   "chips": 3318,
+   "out_of_range_%": 35.2320675105,
+   "fallback_if_trusted_%": null,
+   "fallback_among_flagged_%": null,
+   "fallback_among_normal_%": null
+  },
+  {
+   "chip": "SoC",
+   "group": "test wafers",
+   "chips": 1540,
+   "out_of_range_%": 1.1688311688,
+   "fallback_if_trusted_%": null,
+   "fallback_among_flagged_%": null,
+   "fallback_among_normal_%": null
+  }
+ ],
+ "fallback": [
+  {
+   "chip": "MCU",
+   "sent to today's method": "17.0% fail the check + 0.2% out of range",
+   "today": "28.7 ms",
+   "with AI and fallbacks": "7.4 ms",
+   "saved": "74%"
+  },
+  {
+   "chip": "Power chip",
+   "sent to today's method": "20.7% fail the check + 0.1% out of range",
+   "today": "44.6 tries",
+   "with AI and fallbacks": "11.5 tries",
+   "saved": "74%"
+  },
+  {
+   "chip": "Sensor",
+   "sent to today's method": "Tight grade (all chips) + 5% sample for monitoring",
+   "today": "7.2 s",
+   "with AI and fallbacks": "2.6 s (Medium/Loose)",
+   "saved": "63%"
+  },
+  {
+   "chip": "SoC",
+   "sent to today's method": "15.1% near a product boundary get the speed test",
+   "today": "450 ms",
+   "with AI and fallbacks": "68 ms",
+   "saved": "85%"
+  }
+ ],
+ "monitoring": [
+  {
+   "product": "MCU-A test",
+   "wafer": "MA1-W01",
+   "fallback_%": 20.9026128266,
+   "alarm": false
+  },
+  {
+   "product": "MCU-A test",
+   "wafer": "MA2-W05",
+   "fallback_%": 9.2636579572,
+   "alarm": false
+  },
+  {
+   "product": "MCU-A test",
+   "wafer": "MA3-W02",
+   "fallback_%": 24.703087886,
+   "alarm": false
+  },
+  {
+   "product": "MCU-A test",
+   "wafer": "MA3-W04",
+   "fallback_%": 13.0641330166,
+   "alarm": false
+  },
+  {
+   "product": "MCU-B",
+   "wafer": "MB1-W01",
+   "fallback_%": 11.8764845606,
+   "alarm": false
+  },
+  {
+   "product": "MCU-B",
+   "wafer": "MB1-W02",
+   "fallback_%": 18.5273159145,
+   "alarm": false
+  },
+  {
+   "product": "MCU-B",
+   "wafer": "MB1-W03",
+   "fallback_%": 22.5653206651,
+   "alarm": false
+  },
+  {
+   "product": "MCU-C",
+   "wafer": "MC1-W01",
+   "fallback_%": 19.0023752969,
+   "alarm": false
+  },
+  {
+   "product": "MCU-C",
+   "wafer": "MC1-W02",
+   "fallback_%": 24.9406175772,
+   "alarm": false
+  },
+  {
+   "product": "simulated fault",
+   "wafer": "MA3-W04 +4 mV meter",
+   "fallback_%": 85.0356294537,
+   "alarm": true
+  }
+ ],
+ "by_zone": [
+  {
+   "model": "MCU trims",
+   "product": "MCU-A test",
+   "zone": "centre",
+   "chips": 772,
+   "no_search_%": 80.9585492228
+  },
+  {
+   "model": "MCU trims",
+   "product": "MCU-A test",
+   "zone": "edge",
+   "chips": 912,
+   "no_search_%": 84.7587719298
+  },
+  {
+   "model": "MCU trims",
+   "product": "MCU-B",
+   "zone": "centre",
+   "chips": 579,
+   "no_search_%": 82.3834196891
+  },
+  {
+   "model": "MCU trims",
+   "product": "MCU-B",
+   "zone": "edge",
+   "chips": 684,
+   "no_search_%": 82.3099415205
+  },
+  {
+   "model": "MCU trims",
+   "product": "MCU-C",
+   "zone": "centre",
+   "chips": 386,
+   "no_search_%": 77.4611398964
+  },
+  {
+   "model": "MCU trims",
+   "product": "MCU-C",
+   "zone": "edge",
+   "chips": 456,
+   "no_search_%": 78.5087719298
+  },
+  {
+   "model": "Power-chip rails",
+   "product": "PMIC-P1 test",
+   "zone": "centre",
+   "chips": 1044,
+   "no_search_%": 79.5977011494
+  },
+  {
+   "model": "Power-chip rails",
+   "product": "PMIC-P1 test",
+   "zone": "edge",
+   "chips": 1168,
+   "no_search_%": 79.1095890411
+  },
+  {
+   "model": "Power-chip rails",
+   "product": "PMIC-P2",
+   "zone": "centre",
+   "chips": 783,
+   "no_search_%": 81.8646232439
+  },
+  {
+   "model": "Power-chip rails",
+   "product": "PMIC-P2",
+   "zone": "edge",
+   "chips": 876,
+   "no_search_%": 78.99543379
+  },
+  {
+   "model": "Power-chip rails",
+   "product": "PMIC-C7",
+   "zone": "centre",
+   "chips": 522,
+   "no_search_%": 75.2873563218
+  },
+  {
+   "model": "Power-chip rails",
+   "product": "PMIC-C7",
+   "zone": "edge",
+   "chips": 584,
+   "no_search_%": 72.0890410959
+  }
+ ],
+ "model_cards": [
+  {
+   "model": "MCU trims: Random Forest x3",
+   "predicts": "bandgap, clock and regulator trim codes",
+   "needs": "untrimmed readings, process monitors, position on wafer",
+   "beats": "physics formula and today's search",
+   "result": "no search needed 83% (wafers: 67-91%)",
+   "tested on": "15 MCU-A wafers, one at a time; MCU-B/C wafers",
+   "falls back when": "the check fails, or an input is out of range"
+  },
+  {
+   "model": "MCU-C drift: fine-tuned gradient boosting",
+   "predicts": "voltage shift caused by packaging",
+   "needs": "process monitors, position on wafer, 50 MCU-C chips to fine-tune",
+   "beats": "trimming to 1.200 V",
+   "result": "final-test pass 91% -> 99.4%",
+   "tested on": "both MCU-C wafers, 20 samples each (early: 2 wafers)",
+   "falls back when": "final test still catches any chip out of spec"
+  },
+  {
+   "model": "Power-chip rails: Ridge x4",
+   "predicts": "codes for the 4 output voltages",
+   "needs": "one reference reading, process monitors, position",
+   "beats": "today's search",
+   "result": "3.9x fewer tries (wafers: 3.6-4.0x)",
+   "tested on": "15 PMIC-P1 wafers one at a time; 5 wafers of P2/C7 never trained on",
+   "falls back when": "the check fails, or an input is out of range"
+  },
+  {
+   "model": "Sensor: Ridge x3",
+   "predicts": "hot and cold behaviour from a room-temperature test",
+   "needs": "25 C readings, self-test, process monitors",
+   "beats": "the fleet-average single pass",
+   "result": "Medium grade pass 96% (wafers: 95-97%)",
+   "tested on": "15 ACC-2G wafers one at a time; 8G/16G wafers",
+   "falls back when": "Tight grade: always the full 3-temperature test"
+  },
+  {
+   "model": "SoC speed: Ridge x3 + margin",
+   "predicts": "speed of the 4/6/8 fastest cores",
+   "needs": "ring oscillator, path delay, leakage, good-core count, process monitors",
+   "beats": "speed-testing every chip",
+   "result": "85% of speed tests skipped, 0 escapes",
+   "tested on": "margin chosen on 4 validation wafers, checked on 5 untouched wafers",
+   "falls back when": "the chip is within 80 MHz of a product boundary"
+  }
+ ],
+ "ranges": {
+  "MCU": {
+   "bg_untrim_V": [
+    1.1234604000000001,
+    1.2654192
+   ],
+   "hsi_untrim_MHz": [
+    14.15694955,
+    18.477558549999998
+   ],
+   "ldo_untrim_V": [
+    1.0364306699999999,
+    1.13302023
+   ],
+   "bg_trimmed_sort_V": [
+    1.1942483799999999,
+    1.20217942
+   ],
+   "pcm_vth_n_mV": [
+    392.03111,
+    484.42019
+   ],
+   "pcm_vth_p_mV": [
+    -522.10375,
+    -448.04635
+   ],
+   "pcm_rs_ohm_sq": [
+    254.81048000000004,
+    330.73832
+   ],
+   "pcm_tox_A": [
+    19.386924999999998,
+    21.304825
+   ],
+   "pcm_mobility_rel": [
+    0.8487232,
+    1.1082687999999998
+   ],
+   "x_mm": [
+    -105.6,
+    105.6
+   ],
+   "y_mm": [
+    -105.6,
+    105.6
+   ],
+   "radius_mm": [
+    -9.121,
+    100.33099999999999
+   ]
+  },
+  "Power chip": {
+   "vref_untrim_V": [
+    0.5772207559999999,
+    0.610020884
+   ],
+   "vref_trimmed_sort_V": [
+    0.5994830820000001,
+    0.600526098
+   ],
+   "pcm_vth_n_mV": [
+    392.01010400000007,
+    472.99709599999983
+   ],
+   "pcm_vth_p_mV": [
+    -494.727126,
+    -429.55241400000034
+   ],
+   "pcm_rs_ohm_sq": [
+    253.62110600000005,
+    326.2452739999998
+   ],
+   "pcm_tox_A": [
+    18.613267599999997,
+    21.678912399999994
+   ],
+   "pcm_mobility_rel": [
+    0.83785938,
+    1.2112324199999995
+   ],
+   "x_mm": [
+    -109.2,
+    109.2
+   ],
+   "y_mm": [
+    -109.2,
+    109.2
+   ],
+   "radius_mm": [
+    -9.206999999999999,
+    101.27699999999999
+   ]
+  },
+  "Sensor": {
+   "offset_25C_mg": [
+    -33.12355649999998,
+    54.00258149999978
+   ],
+   "sens_25C_rel": [
+    0.9455080405,
+    1.0650963744999995
+   ],
+   "st_response_mg": [
+    466.009131,
+    536.7810989999998
+   ],
+   "stress_gauge_mV": [
+    -13.6373,
+    21.0343
+   ],
+   "asic_vref_mV": [
+    1189.8015,
+    1213.7115000000001
+   ],
+   "mems_resonance_kHz": [
+    4.15699,
+    5.45071
+   ],
+   "mems_q_factor": [
+    1.6816099999999998,
+    2.4158899999999996
+   ],
+   "pcm_vth_n_mV": [
+    420.39199999999994,
+    491.048
+   ],
+   "pcm_vth_p_mV": [
+    -512.222,
+    -405.038
+   ],
+   "pcm_rs_ohm_sq": [
+    276.31399999999996,
+    331.226
+   ],
+   "pcm_tox_A": [
+    18.9473,
+    20.9597
+   ],
+   "pcm_mobility_rel": [
+    0.87999,
+    1.15371
+   ],
+   "x_mm": [
+    -109.2,
+    109.2
+   ],
+   "y_mm": [
+    -109.2,
+    109.2
+   ],
+   "radius_mm": [
+    -1.5069999999999997,
+    100.577
+   ]
+  },
+  "SoC": {
+   "ro_freq_MHz": [
+    801.3668579999999,
+    1132.7356020000009
+   ],
+   "cpm_path_delay_ps": [
+    263.502029,
+    368.8432010000001
+   ],
+   "iddq_25C_mA": [
+    6.655826999999924,
+    399.45426300000076
+   ],
+   "pcm_vth_n_mV": [
+    392.75691299999994,
+    495.6958770000001
+   ],
+   "pcm_vth_p_mV": [
+    -523.774719,
+    -427.7638109999997
+   ],
+   "pcm_rs_ohm_sq": [
+    257.492663,
+    350.26066699999996
+   ],
+   "pcm_tox_A": [
+    18.083356799999997,
+    21.6156432
+   ],
+   "pcm_mobility_rel": [
+    0.8443545399999999,
+    1.101583660000002
+   ],
+   "x_mm": [
+    -159.6,
+    159.6
+   ],
+   "y_mm": [
+    -159.6,
+    159.6
+   ],
+   "radius_mm": [
+    -2.8629999999999995,
+    150.293
+   ]
+  }
+ }
+}

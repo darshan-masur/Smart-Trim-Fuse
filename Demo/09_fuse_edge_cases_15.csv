@@ -1,0 +1,16 @@
+die_id,derivative,fuse_map_hex,expected_verdict,what_it_tests
+MCU-006745,MCU-B,0x0000023F10C1F61A,PASS,"good word, die found in the sort records"
+MCU-002859,MCU-A,0x000002FF503E2CA4,PASS,"good word, die found in the sort records"
+MCU-007940,MCU-C,0x000007FF9072B35D,PASS,"good word, die found in the sort records"
+MCU-999999,MCU-A,0x000002FF505A2A64,REVIEW,die_id not in the sort records: trim fields cannot be checked
+,MCU-A,0x000002FF502A0BE3,REVIEW,no die_id
+die-12,MCU-A,0x000002FF502A0BE3,REVIEW,die_id is not in the MCU-###### format
+MCU-006624,MCU-B,0x0000023F1016D0E3,REVIEW,same die_id twice in the file (1 of 2)
+MCU-006624,MCU-B,0x0000023F10DA1016,REVIEW,same die_id twice in the file (2 of 2)
+MCU-006315,MCU-A,0x000002FF505A2A64,REVIEW,"word says MCU-A, sort records say MCU-B"
+MCU-000580,MCU-A,0x2FF505A2A64,BLOCK,too short: 11 hex digits instead of 16
+MCU-000580,MCU-A,0x0000002FF505A2A64,BLOCK,too long: 17 hex digits
+MCU-000580,MCU-A,0x000002FF505A2AZ4,BLOCK,not hex ('Z')
+MCU-000580,MCU-A,000002FF505A2A64,BLOCK,missing the 0x prefix
+MCU-000503,MCU-Z,0x000002FF502A0BE3,BLOCK,unknown product
+MCU-008402,MCU-C,0x000007FF9089F45F,BLOCK,bandgap trim field differs from the sort trim code

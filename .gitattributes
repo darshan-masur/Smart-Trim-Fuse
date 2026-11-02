@@ -1,0 +1,7 @@
+# keep data files byte-for-byte identical on every OS (tests compare their checksums)
+*.csv -text
+*.joblib binary
+*.jpg binary
+*.pptx binary
+*.docx binary
+*.pdf binary

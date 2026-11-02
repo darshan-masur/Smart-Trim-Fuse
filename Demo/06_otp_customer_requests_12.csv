@@ -1,0 +1,13 @@
+request_id,customer,buck1_V,buck2_V,ldo1_V,ldo2_V,sequence,i2c_addr,other_addresses_on_bus,expected_label
+DEMO-01,CUST-NEW-A,0.8,1.1,1.8,3.3,buck1>buck2>ldo1>ldo2,0x60,0x3B;0x5E,valid
+DEMO-02,CUST-NEW-A,2.0,1.1,1.8,3.3,buck1>buck2>ldo1>ldo2,0x60,0x3B,out_of_range
+DEMO-03,CUST-NEW-B,0.8,1.1,1.8,1.0,buck1>buck2>ldo1>ldo2,0x61,,out_of_range
+DEMO-04,CUST-NEW-B,0.8,1.1,1.8,3.3,buck1>buck2>ldo1>ldo2,0x7F,0x20,address_reserved
+DEMO-05,CUST-NEW-C,0.9,1.05,2.5,3.3,buck1>ldo1>buck2>ldo2,0x03,,address_reserved
+DEMO-06,CUST-NEW-C,0.9,1.05,2.5,3.3,buck1>ldo1>buck2>ldo2,0x48,0x20;0x48,address_collision
+DEMO-07,CUST-NEW-D,0.75,1.2,1.8,3.3,buck1>buck1>ldo1>ldo2,0x62,0x1A,invalid_sequence
+DEMO-08,CUST-NEW-D,0.75,1.2,1.8,3.3,buck1>buck2>ldo1,0x62,0x1A,invalid_sequence
+DEMO-09,CUST-NEW-E,0.85,1.15,1.8,3.3,ldo2>buck1>buck2>ldo1,0x55,0x40,sequence_conflict
+DEMO-10,CUST-NEW-E,0.9,1.05,2.5,3.3,buck1>ldo1>buck2>ldo2,0x62,,valid
+DEMO-11,CUST-NEW-F,0.75,1.2,1.8,3.3,buck2>buck1>ldo1>ldo2,0x61,0x1A,valid
+DEMO-12,CUST-NEW-F,1.95,1.1,1.8,3.3,buck1>buck2>ldo1>ldo2,0x50,0x50,out_of_range
