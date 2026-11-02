@@ -23,6 +23,8 @@ HYB = ev["soc_hybrid_MHz"]
 hyb = pd.DataFrame(ev["soc_curve_test"]).set_index("margin_MHz").loc[HYB]
 vb = ui.model("vmin")  # notebook 07
 vm = vb["metrics"]
+tm = ui.model("tsense")["metrics"]  # notebook 08
+avs = ui.soc_avs()
 
 st.title("Results and why")
 ui.plain("One card per result: <b>before → after</b>, how it works, why that method was chosen, and how much it varies "
@@ -81,6 +83,21 @@ cards = [
      "Vmin moves almost linearly with the process monitors, so a straight-line model beat Random Forest and gradient "
      "boosting. The error before the arrow is one fleet-wide value for every chip.",
      f"Each of 20 wafers held out in turn: {vm['lowo_mae_min_mV']:.1f} to {vm['lowo_mae_max_mV']:.1f} mV"),
+    ("SoC voltage bin (AVS)", "soc_binning_harvesting + soc_sku_demand", f"{int((avs < 0).sum())} of {len(avs):,} under-volted",
+     f"chips that skip the speed test get their AVS voltage bin from the predicted speed minus the {HYB} MHz margin. "
+     f"Of {len(avs):,} such chips with the same product as the test: {(avs == 0).mean():.0%} exact bin, "
+     f"{(avs > 0).mean():.0%} one or more bins higher (on average +{avs.mean() * 12.5:.1f} mV), none lower.",
+     "the bin comes from the product spec's voltage rule. Using the slower edge of the prediction pushes errors towards "
+     "a little extra power rather than too little voltage (none on these wafers; not proof of zero risk).",
+     f"Bins above the need: {', '.join(f'+{int(b)}: {int((avs == b).sum())}' for b in sorted(set(avs)))} chips"),
+    ("MCU temperature sensor", "mcu_trim_fuse", f"{tm['baseline_mae_C']:.1f} → {tm['mae_C']:.2f} °C error",
+     "predict the sensor's 110 °C reading (TS_CAL2) from the 30 °C reading and the process monitors, so MCU-A and "
+     f"MCU-B skip the hot test. Trained only on MCU-C, the one version measured hot; {tm['within2_pct']:.0f}% of "
+     f"{tm['chips']:,} chips within ±2 °C (vs {tm['baseline_within2_pct']:.0f}% with one fixed slope).",
+     "the sensor slope follows the process (oxide thickness) almost linearly and the versions differ in process, so a "
+     "straight-line model carries it across; Random Forest and boosting cannot extrapolate and did worse.",
+     f"Each of {tm['wafers']} MCU-A/B wafers: {tm['wafer_mae_min_C']:.2f} to {tm['wafer_mae_max_C']:.2f} °C · "
+     f"{tm['outside_train_tox_pct']:.0f}% of chips outside MCU-C's process range"),
 ]
 for row in range(0, len(cards), 2):
     a, b = st.columns(2)

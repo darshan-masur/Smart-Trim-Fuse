@@ -37,6 +37,8 @@ numbers (the Power BI dashboard and the interview material are kept locally, not
 | OTP_CHECK | **400 / 400** customer requests judged as labelled | Rule check | all 400 requests | - |
 | REPAIR | Exact repair saves **17** more arrays than greedy (1,860 vs 1,843) | Optimiser | 3,000 bitmaps | - |
 | SOC_VMIN | SoC worst-core Vmin predicted with **4.2 mV** typical error (median baseline 27 mV); a **25 mV** margin left 0 of 1,540 chips under-predicted | Measured | 5 held-out wafers; margin chosen on validation wafers | 3.8–4.5 mV; 95% upper bound on under-prediction ≈ 0.19% |
+| SOC_AVS | Chips that skip the speed test: **0 of 1,306** get a lower AVS voltage bin than they need; 34% exact, 66% higher (mean +12.7 mV) | Measured | same 5 held-out wafers, 80 MHz margin | bins above the need: +1: 428, +2: 408, +3: 26 |
+| TSENSE | MCU temperature-sensor 110 °C point predicted for MCU-A/B: **3.0 → 0.82 °C** typical error, 95% within ±2 °C | Measured, **trained on MCU-C only (2 wafers)** | 7,578 MCU-A/B dies, 18 wafers | 0.78–0.87 °C per wafer; extrapolates for 89% of dies |
 
 **Split used everywhere:** `GroupShuffleSplit` by `wafer_id`. 25% of the base version's wafers are held out, with
 `random_state = 42` (`src/common.py wafer_split`). No wafer is ever on both sides. The base versions are MCU-A,

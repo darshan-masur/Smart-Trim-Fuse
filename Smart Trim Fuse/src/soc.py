@@ -63,6 +63,15 @@ def margin_split(d, skus, ftop, margin_ghz):
     return sure, pe, sure != best_sku(eligibility(d, skus, ftop, -margin_ghz))
 
 
+def avs_offset(sure, pred_elig, true_elig, skipped):
+    """AVS bin given from the prediction minus the bin the measured speed needs, for dies that skip the speed test and
+    get the same product as the test would give (0 = exact bin, positive = more voltage than needed, negative = too
+    little)."""
+    true = best_sku(true_elig)
+    idx = np.flatnonzero(np.asarray(skipped) & (sure == true) & (sure != "scrap"))
+    return np.array([pred_elig[s + "_bin"].values[i] - true_elig[s + "_bin"].values[i] for i, s in zip(idx, sure[idx])])
+
+
 def unsafe(assigned, pred_elig, true_elig):
     """Assignment the die can't really meet: wrong SKU, or a voltage bin lower than it needs."""
     assigned = np.asarray(assigned)

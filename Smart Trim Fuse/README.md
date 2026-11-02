@@ -44,14 +44,14 @@ tests/          focused checks: fuse and OTP rules, file recognition, missing va
 src/            config.py, common.py, mcu.py, pmic.py, sensor.py, soc.py (features, rules, optimiser, repair), batch.py,
                 results.py (model comparisons recorded from notebooks 01-05)
 data/           the 9 CSVs + DATA_DICTIONARY.md
-models/         trim_models, pmic_models, sensor_models, soc_models, vmin_models (.joblib), saved by the Colab notebooks,
+models/         trim_models, pmic_models, sensor_models, soc_models, vmin_models, tsense_models (.joblib), saved by the Colab notebooks,
                 and evaluation_06.json (notebook 06: wafer-by-wafer ranges, validated SoC margin, model cards)
 .streamlit/     config.toml (theme, copied from the SoC app)
 ```
 
 ## Where the numbers come from
 
-- **Models:** the exact `.joblib` files saved by notebooks 01-04 and 07. Nothing is retrained in the app. If you re-run a
+- **Models:** the exact `.joblib` files saved by notebooks 01-04, 07 and 08. Nothing is retrained in the app. If you re-run a
   notebook, copy its new `.joblib` file into `models/`. Notebook 06 writes `evaluation_06.json`: copy it into
   `models/` too.
 - **Live results:** every chip page recomputes its final model's results on the same held-out wafers as the

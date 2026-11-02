@@ -43,7 +43,7 @@ loaded with no errors.
 .venv/Scripts/python -m unittest discover -s tests -v
 ```
 
-39 checks in 7 files:
+40 checks in 7 files:
 
 | File | What it checks |
 |---|---|
@@ -93,6 +93,7 @@ The notebooks are in `Colab Notebook/`. Run them **in this order**, each with *R
 | 6 | `05_Advanced_Methods_Check.ipynb` | nothing (comparison only) |
 | 7 | `06_Evaluation_and_Deployment.ipynb` | `evaluation_06.json` |
 | 8 | `07_SoC_Vmin_Prediction.ipynb` | `vmin_models.joblib` |
+| 9 | `08_MCU_Temperature_Sensor_Calibration.ipynb` | `tsense_models.joblib` |
 
 - **Locally:** install `requirements-notebooks.txt` into the same environment, then open the folder in Jupyter or
   VS Code. The 9 CSVs are already next to the notebooks.
@@ -101,7 +102,7 @@ The notebooks are in `Colab Notebook/`. Run them **in this order**, each with *R
 - All splits use `random_state = 42`, so a re-run reproduces the same wafers and the same numbers. Tree models use
   their own seeds too. A different scikit-learn version may change the last digit.
 
-**After a re-run:** copy the 5 `.joblib` files and `evaluation_06.json` into `Smart Trim Fuse/models/`, then
+**After a re-run:** copy the 6 `.joblib` files and `evaluation_06.json` into `Smart Trim Fuse/models/`, then
 re-run step 2. `test_headline_numbers.py` tells you if any headline moved. If one did, update
 `RESULTS_SOURCE_OF_TRUTH.csv` / `.md` first, then the deck, report and dashboard.
 

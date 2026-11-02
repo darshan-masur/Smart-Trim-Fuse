@@ -19,8 +19,8 @@ families (MCU, PMIC, sensor, SoC). It is not production software (see
 | **Problem statement** | Kept locally, not published (the company's document) | - |
 | **Datasets** (9 CSVs + data dictionary) | `Smart Trim Fuse/data/` | `AI Trim & Fuse/Dataset/.../data/` (as delivered with the generator), `Colab Notebook/` (so the notebooks run standalone) |
 | **Data generator + author's baselines** | `AI Trim & Fuse/Dataset/trimfuse_synthetic_dataset/trimfuse_synth/` | - |
-| **Notebooks** (run in order 00 → 07) | `Colab Notebook/00_…` to `07_…` | - |
-| **Models + evaluation** | `Smart Trim Fuse/models/` (5 `.joblib` + `evaluation_06.json`) | `Colab Notebook/` (where the notebooks write them; regenerable) |
+| **Notebooks** (run in order 00 → 08) | `Colab Notebook/00_…` to `08_…` | - |
+| **Models + evaluation** | `Smart Trim Fuse/models/` (6 `.joblib` + `evaluation_06.json`) | `Colab Notebook/` (where the notebooks write them; regenerable) |
 | **App** | `Smart Trim Fuse/app/` (5 pages) + `src/` (logic) | - |
 | **Checks** | `Smart Trim Fuse/tests/` | - |
 | **Demo files** | `Demo/` (9 test CSVs + `expected_results.csv`) | - |

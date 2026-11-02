@@ -45,6 +45,8 @@ def recomputed():
         "FUSE_CHECK": f"{hits}/{total}" if false == 0 else f"{hits}/{total} with {false} false alarms",
         "REPAIR": f"+{h['repair_saved']}",
         "SOC_VMIN": f"{_vmin_test_errors().abs().mean():.2f} mV",
+        "SOC_AVS": f"{int((ui.soc_avs() < 0).sum())} of {len(ui.soc_avs())}",
+        "TSENSE": f"{_tsense_errors().abs().mean():.2f} C",
     }
 
 
@@ -53,6 +55,13 @@ def _vmin_test_errors():
     vb = ui.model("vmin")
     _, te = wafer_split(ui.raw("soc"))
     return te[[f"core{i}_vmin_2GHz_mV" for i in range(8)]].max(axis=1) - vb["model"].predict(te[vb["features"]])
+
+
+def _tsense_errors():
+    """Temperature error at a true 110 C on MCU-A/B, calibrated with the predicted hot point (notebook 08)."""
+    tb, m = ui.model("tsense"), ui.raw("mcu")
+    t = m[~m.ts_cal2_measured_on_tester]
+    return 30 + (t.ts_cal2_110C_counts - t.ts_cal1_30C_counts) * 80 / tb["model"].predict(t[tb["features"]]) - 110
 
 
 def _mcu_no_search():
@@ -76,6 +85,12 @@ class Headlines(unittest.TestCase):
         self.assertEqual(int((err > vb["margin_mV"]).sum()), vb["metrics"]["test_under_at_margin"])
         self.assertEqual(vb["metrics"]["test_under_at_margin"], 0)
         self.assertEqual(sorted(wafer_split(ui.raw("soc"))[1].wafer_id.unique()), vb["test_wafers"])
+
+    def test_tsense_trained_only_on_chips_measured_hot(self):
+        tb, m = ui.model("tsense"), ui.raw("mcu")
+        self.assertEqual(set(m[m.ts_cal2_measured_on_tester].derivative), {"MCU-C"})
+        self.assertEqual(tb["metrics"]["chips"], int((~m.ts_cal2_measured_on_tester).sum()))
+        self.assertLess(_tsense_errors().abs().mean(), tb["metrics"]["baseline_mae_C"])
 
     def test_soc_margin_has_no_over_graded_chips(self):
         ev = ui.evaluation()

@@ -54,7 +54,14 @@ product and one or two small new versions. It ships with a data dictionary and i
 8. **07 SoC Vmin:** worst-core minimum voltage at 2 GHz predicted from the same monitors as the speed model (Ridge,
    4.2 mV typical error vs 27 mV for one fleet-wide value); a 25 mV safety margin chosen on validation wafers left 0 of
    1,540 untouched chips under-predicted; each wafer held out in turn gives 3.8–4.5 mV. In this dataset the AVS bin is
-   set from speed, so the model adds a voltage estimate without changing the bin logic.
+   set from speed, so the model adds a voltage estimate without changing the bin logic. Chips that skip the speed
+   test take their AVS bin from the slower edge of the prediction: 0 of 1,306 get less voltage than they need (34% exact
+   bin, 66% higher, mean +12.7 mV).
+9. **08 MCU temperature sensor:** only MCU-C is measured at 110 °C, so the hot calibration point (TS_CAL2) of MCU-A
+   and MCU-B is predicted from the 30 °C reading, the process monitors and die position (Ridge, trained on MCU-C).
+   Typical temperature error 0.82 °C vs 3.0 °C for one fixed slope, 95% within ±2 °C, 0.78–0.87 °C per wafer. The
+   gain comes from carrying the process dependence across versions; 89% of MCU-A/B chips lie outside MCU-C's process
+   range, so a real flow would confirm it on a measured sample first.
 
 ## 4. Validation and controls
 
@@ -69,7 +76,7 @@ product and one or two small new versions. It ships with a data dictionary and i
   reserved bits, trim fields and the TS_CAL1 reading. Otherwise the word is **REVIEW** or **BLOCK**.
 - **Single source of truth.** Every headline number is defined with its dataset, split, seed, model and assumptions,
   and is recomputed from the saved models by an automated test.
-- **Automated checks.** 39 tests: fuse and OTP rules, file recognition and cleaning, the wafer split, every Demo file,
+- **Automated checks.** 40 tests: fuse and OTP rules, file recognition and cleaning, the wafer split, every Demo file,
   the headline numbers, identical data copies and colour contrast.
 - **Reproducibility.** Python 3.13.1 with 48 pinned packages; a clean install has been tested.
 

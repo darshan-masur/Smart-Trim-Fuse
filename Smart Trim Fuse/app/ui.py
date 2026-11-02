@@ -979,6 +979,14 @@ def soc_test():
 
 
 @st.cache_data
+def soc_avs():
+    """AVS bins of the chips that skip the speed test at the hybrid margin: offset from the bin their measured speed needs."""
+    te, ftop = soc_test()
+    sure, pe, unsure = Q.margin_split(te, raw("sku"), ftop, evaluation()["soc_hybrid_MHz"] / 1000)
+    return Q.avs_offset(sure, pe, Q.eligibility(te, raw("sku"), Q.measured_ftop(te)), ~unsure)
+
+
+@st.cache_data
 def soc_guard_table(guards):
     te, ftop = soc_test()
     sku = raw("sku")

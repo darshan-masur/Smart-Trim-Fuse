@@ -45,6 +45,8 @@ all the data. Every number, with its dataset, split, seed, model and definition,
 | Sensor | **3 oven passes → 1** for Medium / Loose grades (7.2 → 2.6 s); 96% of Medium chips in limits | 95–97% |
 | SoC | **+34.7% weekly revenue** from the same chips (optimiser vs synthetic demand); **85%** skip the speed test, 0 of 1,540 sold too fast | +33% to +58% per wafer |
 | SoC Vmin | Worst-core minimum voltage predicted from monitors with **4.2 mV** typical error (baseline 27 mV); a **25 mV** margin left 0 of 1,540 chips under-predicted | 3.8–4.5 mV |
+| SoC AVS | Chips that skip the speed test get their voltage bin from the prediction: **0 of 1,306** given less voltage than they need (34% exact bin, 66% higher, mean +12.7 mV) | – |
+| MCU temp. sensor | 110 °C calibration point predicted for MCU-A/B (trained on MCU-C, the only version tested hot): **3.0 → 0.82 °C** typical error, 95% within ±2 °C | 0.78–0.87 °C over 18 wafers |
 | Fuse words | **406 / 406** injected errors caught, **0** false alarms, every field checked | – |
 
 Time figures assume a fixed time per measurement or oven pass; the SoC gain depends on 3 rows of synthetic prices and
@@ -55,7 +57,7 @@ demand. Details and caveats are in the source-of-truth table.
 | Model | Used for | Why |
 |---|---|---|
 | Random Forest | MCU trim codes (bandgap, clock, LDO), PMIC reference | Handles the clock's non-linear pattern; beat XGBoost, LightGBM and a neural net |
-| Ridge regression | PMIC output rails, sensor temperature behaviour, SoC core speed, SoC Vmin | Near-linear physics: the simple model won and carried over to new chip versions |
+| Ridge regression | PMIC output rails, sensor temperature behaviour, SoC core speed, SoC Vmin, MCU temperature sensor | Near-linear physics: the simple model won and carried over to new chip versions |
 | Transfer learning (gradient boosting) | MCU-C packaging drift | Learned on MCU-A, fine-tuned with only 50 MCU-C chips |
 | Fixed rules | Fuse words, customer OTP settings, PMIC hidden defects | A fuse can't be undone: exact answers (rules 100% vs ML 96–98.5%) |
 | Integer optimiser (ILP) | SoC product plan | Matching chips to demand has one exact best answer |
@@ -90,8 +92,8 @@ Python 3.13; every package is pinned. Full clean-install steps, the checks and t
 
 | Folder / file | Contents |
 |---|---|
-| `Smart Trim Fuse/` | The website: `app/` (5 pages), `src/` (logic, rules, optimiser), `models/` (saved models), `data/` (9 CSVs), `tests/` (39 checks) |
-| `Colab Notebook/` | 8 notebooks, run in order 00 → 07, plus the 9 CSVs they read |
+| `Smart Trim Fuse/` | The website: `app/` (5 pages), `src/` (logic, rules, optimiser), `models/` (saved models), `data/` (9 CSVs), `tests/` (40 checks) |
+| `Colab Notebook/` | 9 notebooks, run in order 00 → 08, plus the 9 CSVs they read |
 | `Demo/` | 9 test CSVs for the Batch check page, with `expected_results.csv` |
 | `AI Trim & Fuse/Dataset/` | The synthetic dataset as provided, with its data dictionary and generator |
 | `Deliverables/` | Presentation (PPTX) and report (DOCX + PDF) |
@@ -111,6 +113,7 @@ Python 3.13; every package is pinned. Full clean-install steps, the checks and t
 | `05_Advanced_Methods_Check` | GNN, GAN, RNN, RL and others: what didn't help, and why | – |
 | `06_Evaluation_and_Deployment` | Each wafer held out in turn, validated SoC margin, fallback and monitoring, model cards | `evaluation_06.json` |
 | `07_SoC_Vmin_Prediction` | Worst-core Vmin from monitors: baselines vs models, safety margin chosen on validation wafers, every wafer held out in turn | `vmin_models.joblib` |
+| `08_MCU_Temperature_Sensor_Calibration` | The 110 °C sensor point for MCU-A/B, learned on MCU-C: fixed-slope baseline vs models, every wafer, extrapolation check | `tsense_models.joblib` |
 
 ## Checks
 
@@ -122,7 +125,7 @@ cd "Smart Trim Fuse"
 python -m unittest discover -s tests -v
 ```
 
-39 checks: fuse and OTP rules, file recognition and cleaning, the wafer-grouped split, every Demo file, every headline
+40 checks: fuse and OTP rules, file recognition and cleaning, the wafer-grouped split, every Demo file, every headline
 number recomputed from the saved models, identical data copies, and colour contrast in all four themes.
 
 ## Limits

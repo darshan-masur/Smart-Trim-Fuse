@@ -79,6 +79,18 @@ if chip == "MCU":
     cols = st.columns(3)
     for col, row in zip(cols, rows):
         col.metric(row["Circuit"], f"code {row['AI code']}")
+    tb = ui.model("tsense")  # notebook 08: the 110 °C sensor point, never measured on MCU-A
+    rise = float(tb["model"].predict(r[tb["features"]].to_frame().T)[0])
+    t_err = 30 + (r.ts_cal2_110C_counts - r.ts_cal1_30C_counts) * 80 / rise - 110
+    t1, t2, t3 = st.columns(3)
+    t1.metric("Sensor at 30 °C (TS_CAL1)", f"{r.ts_cal1_30C_counts:.0f}", "measured", delta_color="off",
+              delta_arrow="off")
+    t2.metric("Predicted at 110 °C (TS_CAL2)", f"{r.ts_cal1_30C_counts + rise:.0f}", "no hot test", delta_color="off",
+              delta_arrow="off", help="From the 30 °C reading and the process monitors; trained on MCU-C only")
+    t3.metric("Temperature error at 110 °C", f"{t_err:+.1f} °C", f"real value {r.ts_cal2_110C_counts:.0f}",
+              delta_color="off", delta_arrow="off", help="The real hot reading, shown here only to compare")
+    st.caption("Temperature sensor: MCU-A never goes through the hot test, so its 110 °C calibration point is "
+               "predicted. The model learned on MCU-C, the only version measured hot. Synthetic data.")
 
     ui.step(3, "The check, and the fallback", "Set the code, measure once. Only a circuit that fails gets the conventional search")
     ui.check_panel([(c["name"], int(to_code(r[f"pred_{t}"], c["bits"])), int(r[c["label"]]), c["bits"])
